@@ -9,7 +9,7 @@ Create by Create React App
 看診紀錄系統.\
 疫苗接種紀錄系統.\
 診所預約系統.\
-提醒系統.\
+提醒系統.
 
 ## Available Scripts
 
