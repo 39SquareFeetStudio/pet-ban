@@ -6,7 +6,7 @@ const AuthForm = () => {
   const passwordInputRef = useRef();
 
   const [isLoading, setIsLoading] = useState(false); //等待
-  const [isLogin, setIsLogin] = useState(false); //等待
+  const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
