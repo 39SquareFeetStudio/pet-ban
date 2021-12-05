@@ -1,11 +1,12 @@
-import { useState, useRef } from "react";
 import classes from "./AuthForm.module.css";
+import { useState, useRef } from "react";
 
 const AuthForm = () => {
   const accountInputRef = useRef();
   const passwordInputRef = useRef();
-  const [isLogin, setIsLogin] = useState(true); //true登入/false註冊 狀態
+
   const [isLoading, setIsLoading] = useState(false); //等待
+  const [isLogin, setIsLogin] = useState(false); //等待
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
