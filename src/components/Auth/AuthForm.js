@@ -50,7 +50,11 @@ const AuthForm = () => {
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label>我的帳號</label>
-          <input type={"text"} ref={accountInputRef} />
+          <input
+            type={"email"}
+            placeholder={"請輸入信箱"}
+            ref={accountInputRef}
+          />
         </div>
         <div className={classes.control}>
           <label>我的密碼</label>
