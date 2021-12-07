@@ -1,22 +1,66 @@
 import classes from "./AuthForm.module.css";
 import { useState, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {
+  authUserLoginOrSignUp,
+  authActions,
+} from "../../features/auth/authSlice";
 
 const AuthForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loading, error, data } = useSelector((s) => s.auth);
+
   const accountInputRef = useRef();
   const passwordInputRef = useRef();
+  const confirmPasswordInputRef = useRef();
 
-  const [isLoading, setIsLoading] = useState(false); //等待
-  const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊
+  const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊mod
+  const [submitCounter, setSubmitCounter] = useState(0);
+  const [confirmStr, setConfirmStr] = useState("");
+
+  const restoreHandler = () => {
+    setSubmitCounter(0);
+    setConfirmStr("");
+  };
 
   const switchAuthModeHandler = () => {
+    dispatch(authActions.logOut(null));
+    restoreHandler();
     setIsLogin((prevState) => !prevState);
+  };
+
+  const forgotClickHandler = () => {
+    navigate("/forgot");
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setIsLoading(true);
-    //提交請求登入或註冊請求
-    setIsLoading(false);
+    setSubmitCounter(submitCounter + 1);
+    let check = false;
+    const enteredAccount = accountInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+
+    if (!isLogin) {
+      check = enteredPassword === confirmPasswordInputRef.current.value;
+    } else {
+      check = true;
+    }
+
+    if (check === false) {
+      setConfirmStr("密碼不一致");
+      return;
+    }
+
+    restoreHandler();
+    dispatch(
+      authUserLoginOrSignUp({
+        isLogin: isLogin,
+        account: enteredAccount,
+        password: enteredPassword,
+      })
+    );
   };
 
   return (
@@ -24,26 +68,46 @@ const AuthForm = () => {
       <h1>{isLogin ? "登入" : "註冊"}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor="account">我的帳號</label>
-          <input type={"text"} ref={accountInputRef} />
+          <label>我的帳號</label>
+          <input
+            type={"email"}
+            placeholder={"請輸入信箱"}
+            ref={accountInputRef}
+          />
         </div>
         <div className={classes.control}>
-          <label htmlFor="password">我的密碼</label>
+          <label>我的密碼</label>
           <input type={"password"} ref={passwordInputRef} />
         </div>
+        {!isLogin && (
+          <div className={classes.control}>
+            <label>確認密碼</label>
+            <input type={"password"} ref={confirmPasswordInputRef} />
+          </div>
+        )}
         <div className={classes.actions}>
-          {!isLoading && (
+          {!loading && (
             <button className={classes.actions}>
               {isLogin ? "登入" : "註冊"}
             </button>
           )}
-          {isLoading && <p>處理中...</p>}
+          {loading && <p>loading...</p>}
+          {error && <p>{error}</p>}
+          {data.messages && <p>{data.messages}</p>}
+          {confirmStr && <p>{confirmStr}</p>}
           <button
             className={classes.toggle}
             type={"button"}
             onClick={switchAuthModeHandler}
           >
             {isLogin ? "我要註冊" : "我要登入"}
+          </button>
+          <button
+            className={classes.toggle}
+            type={"button"}
+            onClick={forgotClickHandler}
+          >
+            {"忘記密碼"}
           </button>
         </div>
       </form>

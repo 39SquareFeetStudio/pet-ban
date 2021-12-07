@@ -1,20 +1,86 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
-  token: "",
-  isLoggedIn: false,
+  loading: false,
+  error: null,
+  data: {
+    idToken: "",
+    isLoggedIn: false,
+    messages: "",
+  },
 };
+
+export const authUserLoginOrSignUp = createAsyncThunk(
+  "auth/authUserLoginOrSignUp",
+  async ({ isLogin, account, password }, thunkAPI) => {
+    let url = "";
+    if (isLogin) {
+      url = "http://127.0.0.1:8000/api/auth/login";
+    } else {
+      url = "http://127.0.0.1:8000/api/auth/register";
+    }
+    const { data } = await axios.post(url, {
+      account: account,
+      password: password,
+    });
+
+    return data;
+  }
+);
+
+export const authUserForgotPassword = createAsyncThunk(
+  "auth/authUserForgotPassword",
+  async ({ email }, thunkAPI) => {
+    let url = "http://127.0.0.1:8000/api/auth/forgot";
+    const { data } = await axios.post(url, {
+      email: email,
+    });
+
+    return data;
+  }
+);
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login(state, action) {
-      state.token = action.payload.token;
-      state.isLoggedIn = action.payload.isLoggedIn;
+    logOut: (state) => {
+      state.data = {
+        idToken: "",
+        isLoggedIn: false,
+        messages: "",
+      };
+      state.error = null;
+      state.loading = false;
     },
-    logout(state, action) {
-      return initialState;
+  },
+  extraReducers: {
+    [authUserLoginOrSignUp.pending.type]: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    [authUserLoginOrSignUp.fulfilled.type]: (state, action) => {
+      state.data = action.payload;
+      state.loading = false;
+      state.error = null;
+    },
+    [authUserLoginOrSignUp.rejected.type]: (state) => {
+      state.loading = false;
+      state.error = "訪問錯誤";
+    },
+    [authUserForgotPassword.pending.type]: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    [authUserForgotPassword.fulfilled.type]: (state, action) => {
+      state.data = action.payload;
+      state.loading = false;
+      state.error = null;
+    },
+    [authUserForgotPassword.rejected.type]: (state) => {
+      state.loading = false;
+      state.error = "訪問錯誤";
     },
   },
 });
