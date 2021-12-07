@@ -29,6 +29,18 @@ export const authUserLoginOrSignUp = createAsyncThunk(
   }
 );
 
+export const authUserForgotPassword = createAsyncThunk(
+  "auth/authUserForgotPassword",
+  async ({ email }, thunkAPI) => {
+    let url = "http://127.0.0.1:8000/api/auth/forgot";
+    const { data } = await axios.post(url, {
+      email: email,
+    });
+
+    return data;
+  }
+);
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -54,6 +66,19 @@ export const authSlice = createSlice({
       state.error = null;
     },
     [authUserLoginOrSignUp.rejected.type]: (state) => {
+      state.loading = false;
+      state.error = "訪問錯誤";
+    },
+    [authUserForgotPassword.pending.type]: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    [authUserForgotPassword.fulfilled.type]: (state, action) => {
+      state.data = action.payload;
+      state.loading = false;
+      state.error = null;
+    },
+    [authUserForgotPassword.rejected.type]: (state) => {
       state.loading = false;
       state.error = "訪問錯誤";
     },

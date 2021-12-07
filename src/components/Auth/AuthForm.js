@@ -1,6 +1,7 @@
 import classes from "./AuthForm.module.css";
 import { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   authUserLoginOrSignUp,
   authActions,
@@ -8,6 +9,7 @@ import {
 
 const AuthForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { loading, error, data } = useSelector((s) => s.auth);
 
   const accountInputRef = useRef();
@@ -27,6 +29,10 @@ const AuthForm = () => {
     dispatch(authActions.logOut(null));
     restoreHandler();
     setIsLogin((prevState) => !prevState);
+  };
+
+  const forgotClickHandler = () => {
+    navigate("/forgot");
   };
 
   const submitHandler = (event) => {
@@ -95,6 +101,13 @@ const AuthForm = () => {
             onClick={switchAuthModeHandler}
           >
             {isLogin ? "我要註冊" : "我要登入"}
+          </button>
+          <button
+            className={classes.toggle}
+            type={"button"}
+            onClick={forgotClickHandler}
+          >
+            {"忘記密碼"}
           </button>
         </div>
       </form>
