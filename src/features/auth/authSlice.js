@@ -11,13 +11,20 @@ const initialState = {
   },
 };
 
-export const authUserLogin = createAsyncThunk(
-  "auth/authUserLogin",
-  async ({ account, password }, thunkAPI) => {
-    const { data } = await axios.post(`http://127.0.0.1:8000/api/auth/login`, {
+export const authUserLoginOrSignUp = createAsyncThunk(
+  "auth/authUserLoginOrSignUp",
+  async ({ isLogin, account, password }, thunkAPI) => {
+    let url = "";
+    if (isLogin) {
+      url = "http://127.0.0.1:8000/api/auth/login";
+    } else {
+      url = "http://127.0.0.1:8000/api/auth/register";
+    }
+    const { data } = await axios.post(url, {
       account: account,
       password: password,
     });
+
     return data;
   }
 );
@@ -34,15 +41,16 @@ export const authSlice = createSlice({
     },
   },
   extraReducers: {
-    [authUserLogin.pending.type]: (state) => {
+    [authUserLoginOrSignUp.pending.type]: (state) => {
       state.loading = true;
+      state.error = null;
     },
-    [authUserLogin.fulfilled.type]: (state, action) => {
+    [authUserLoginOrSignUp.fulfilled.type]: (state, action) => {
       state.data = action.payload;
       state.loading = false;
       state.error = null;
     },
-    [authUserLogin.rejected.type]: (state, action) => {
+    [authUserLoginOrSignUp.rejected.type]: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },

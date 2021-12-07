@@ -1,7 +1,7 @@
 import classes from "./AuthForm.module.css";
-import { useState, useRef } from "react";
+import { useState, useRef, Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { authUserLogin } from "../../features/auth/authSlice";
+import { authUserLoginOrSignUp } from "../../features/auth/authSlice";
 
 const AuthForm = () => {
   const { loading, error, data } = useSelector((state) => state.auth);
@@ -10,22 +10,37 @@ const AuthForm = () => {
 
   const accountInputRef = useRef();
   const passwordInputRef = useRef();
+  const confirmPasswordInputRef = useRef();
 
   const [submitCounter, setSubmitCounter] = useState(0);
   const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊mod
 
   const switchAuthModeHandler = () => {
+    setSubmitCounter(0);
     setIsLogin((prevState) => !prevState);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     setSubmitCounter(submitCounter + 1);
+    let check = false;
     const enteredAccount = accountInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
+    if (!isLogin) {
+      check = enteredPassword === confirmPasswordInputRef.current.value;
+    } else {
+      check = true;
+    }
+
+    if (check === false) return;
+
     dispatch(
-      authUserLogin({ account: enteredAccount, password: enteredPassword })
+      authUserLoginOrSignUp({
+        isLogin: isLogin,
+        account: enteredAccount,
+        password: enteredPassword,
+      })
     );
   };
 
@@ -34,24 +49,33 @@ const AuthForm = () => {
       <h1>{isLogin ? "登入" : "註冊"}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor="account">我的帳號</label>
+          <label>我的帳號</label>
           <input type={"text"} ref={accountInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor="password">我的密碼</label>
+          <label>我的密碼</label>
           <input type={"password"} ref={passwordInputRef} />
         </div>
+        {!isLogin && (
+          <div className={classes.control}>
+            <label>確認密碼</label>
+            <input type={"password"} ref={confirmPasswordInputRef} />
+          </div>
+        )}
         <div className={classes.actions}>
           {!loading && (
             <button className={classes.actions}>
               {isLogin ? "登入" : "註冊"}
             </button>
           )}
-          {loading && <p>處理中...</p>}
-          {data.messages !== "" && <p>訊息:{data.messages}</p>}
-          {error !== null && <p>發生錯誤</p>}
-          {submitCounter !== 0 &&
-            (data.isLoggedIn ? <p>登入成功</p> : <p>登入失敗</p>)}
+          {submitCounter !== 0 && (
+            <Fragment>
+              {loading && <p>處理中...</p>}
+              {data.messages !== "" && <p>訊息:{data.messages}</p>}
+              {error !== null && <p>發生錯誤</p>}
+              {isLogin && (data.isLoggedIn ? <p>登入成功</p> : <p>登入失敗</p>)}
+            </Fragment>
+          )}
           <button
             className={classes.toggle}
             type={"button"}
