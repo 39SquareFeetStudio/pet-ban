@@ -1,12 +1,18 @@
 import classes from "./AuthForm.module.css";
 import { useState, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { authUserLogin } from "../../features/auth/authSlice";
 
 const AuthForm = () => {
+  const { loading, error, data } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+
   const accountInputRef = useRef();
   const passwordInputRef = useRef();
 
-  const [isLoading, setIsLoading] = useState(false); //等待
-  const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊
+  const [submitCounter, setSubmitCounter] = useState(0);
+  const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊mod
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -14,9 +20,13 @@ const AuthForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setIsLoading(true);
-    //提交請求登入或註冊請求
-    setIsLoading(false);
+    setSubmitCounter(submitCounter + 1);
+    const enteredAccount = accountInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+
+    dispatch(
+      authUserLogin({ account: enteredAccount, password: enteredPassword })
+    );
   };
 
   return (
@@ -32,12 +42,16 @@ const AuthForm = () => {
           <input type={"password"} ref={passwordInputRef} />
         </div>
         <div className={classes.actions}>
-          {!isLoading && (
+          {!loading && (
             <button className={classes.actions}>
               {isLogin ? "登入" : "註冊"}
             </button>
           )}
-          {isLoading && <p>處理中...</p>}
+          {loading && <p>處理中...</p>}
+          {data.messages !== "" && <p>訊息:{data.messages}</p>}
+          {error !== null && <p>發生錯誤</p>}
+          {submitCounter !== 0 &&
+            (data.isLoggedIn ? <p>登入成功</p> : <p>登入失敗</p>)}
           <button
             className={classes.toggle}
             type={"button"}
