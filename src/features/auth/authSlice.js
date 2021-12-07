@@ -33,11 +33,14 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login(state, action) {
-      state = action.payload;
-    },
-    logout(state) {
-      state = initialState;
+    logOut: (state) => {
+      state.data = {
+        idToken: "",
+        isLoggedIn: false,
+        messages: "",
+      };
+      state.error = null;
+      state.loading = false;
     },
   },
   extraReducers: {
@@ -50,9 +53,9 @@ export const authSlice = createSlice({
       state.loading = false;
       state.error = null;
     },
-    [authUserLoginOrSignUp.rejected.type]: (state, action) => {
+    [authUserLoginOrSignUp.rejected.type]: (state) => {
       state.loading = false;
-      state.error = action.payload;
+      state.error = "訪問錯誤";
     },
   },
 });

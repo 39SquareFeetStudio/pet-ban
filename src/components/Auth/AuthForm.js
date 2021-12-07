@@ -1,22 +1,31 @@
 import classes from "./AuthForm.module.css";
-import { useState, useRef, Fragment } from "react";
+import { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { authUserLoginOrSignUp } from "../../features/auth/authSlice";
+import {
+  authUserLoginOrSignUp,
+  authActions,
+} from "../../features/auth/authSlice";
 
 const AuthForm = () => {
-  const { loading, error, data } = useSelector((state) => state.auth);
-
   const dispatch = useDispatch();
+  const { loading, error, data } = useSelector((s) => s.auth);
 
   const accountInputRef = useRef();
   const passwordInputRef = useRef();
   const confirmPasswordInputRef = useRef();
 
-  const [submitCounter, setSubmitCounter] = useState(0);
   const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊mod
+  const [submitCounter, setSubmitCounter] = useState(0);
+  const [confirmStr, setConfirmStr] = useState("");
+
+  const restoreHandler = () => {
+    setSubmitCounter(0);
+    setConfirmStr("");
+  };
 
   const switchAuthModeHandler = () => {
-    setSubmitCounter(0);
+    dispatch(authActions.logOut(null));
+    restoreHandler();
     setIsLogin((prevState) => !prevState);
   };
 
@@ -33,8 +42,12 @@ const AuthForm = () => {
       check = true;
     }
 
-    if (check === false) return;
+    if (check === false) {
+      setConfirmStr("密碼不一致");
+      return;
+    }
 
+    restoreHandler();
     dispatch(
       authUserLoginOrSignUp({
         isLogin: isLogin,
@@ -72,14 +85,10 @@ const AuthForm = () => {
               {isLogin ? "登入" : "註冊"}
             </button>
           )}
-          {submitCounter !== 0 && (
-            <Fragment>
-              {loading && <p>處理中...</p>}
-              {data.messages !== "" && <p>訊息:{data.messages}</p>}
-              {error !== null && <p>發生錯誤</p>}
-              {isLogin && (data.isLoggedIn ? <p>登入成功</p> : <p>登入失敗</p>)}
-            </Fragment>
-          )}
+          {loading && <p>loading...</p>}
+          {error && <p>{error}</p>}
+          {data.messages && <p>{data.messages}</p>}
+          {confirmStr && <p>{confirmStr}</p>}
           <button
             className={classes.toggle}
             type={"button"}
