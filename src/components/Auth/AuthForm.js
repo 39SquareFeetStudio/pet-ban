@@ -1,20 +1,21 @@
 import classes from "./AuthForm.module.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   authUserLoginOrSignUp,
   authActions,
 } from "../../features/auth/authSlice";
+import { useInput } from "../../hooks/useInput";
 
 const AuthForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, error, data } = useSelector((s) => s.auth);
 
-  const accountInputRef = useRef();
-  const passwordInputRef = useRef();
-  const confirmPasswordInputRef = useRef();
+  const [accountInput, resetAccountInput] = useInput("");
+  const [passwordInput, resetPasswordInput] = useInput("");
+  const [confirmPasswordInput, restConfirmPasswordInput] = useInput("");
 
   const [isLogin, setIsLogin] = useState(true); //true 登入 false註冊mod
   const [submitCounter, setSubmitCounter] = useState(0);
@@ -23,6 +24,9 @@ const AuthForm = () => {
   const restoreHandler = () => {
     setSubmitCounter(0);
     setConfirmStr("");
+    resetAccountInput();
+    resetPasswordInput();
+    restConfirmPasswordInput();
   };
 
   const switchAuthModeHandler = () => {
@@ -39,11 +43,9 @@ const AuthForm = () => {
     event.preventDefault();
     setSubmitCounter(submitCounter + 1);
     let check = false;
-    const enteredAccount = accountInputRef.current.value;
-    const enteredPassword = passwordInputRef.current.value;
 
     if (!isLogin) {
-      check = enteredPassword === confirmPasswordInputRef.current.value;
+      check = passwordInput.value === confirmPasswordInput.value;
     } else {
       check = true;
     }
@@ -53,14 +55,14 @@ const AuthForm = () => {
       return;
     }
 
-    restoreHandler();
     dispatch(
       authUserLoginOrSignUp({
         isLogin: isLogin,
-        account: enteredAccount,
-        password: enteredPassword,
+        account: accountInput.value,
+        password: passwordInput.value,
       })
     );
+    restoreHandler();
   };
 
   return (
@@ -69,20 +71,16 @@ const AuthForm = () => {
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label>我的帳號</label>
-          <input
-            type={"email"}
-            placeholder={"請輸入信箱"}
-            ref={accountInputRef}
-          />
+          <input {...accountInput} type={"email"} placeholder={"請輸入信箱"} />
         </div>
         <div className={classes.control}>
           <label>我的密碼</label>
-          <input type={"password"} ref={passwordInputRef} />
+          <input {...passwordInput} type={"password"} />
         </div>
         {!isLogin && (
           <div className={classes.control}>
             <label>確認密碼</label>
-            <input type={"password"} ref={confirmPasswordInputRef} />
+            <input {...confirmPasswordInput} type={"password"} />
           </div>
         )}
         <div className={classes.actions}>
