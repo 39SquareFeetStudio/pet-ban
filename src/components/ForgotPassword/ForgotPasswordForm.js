@@ -1,17 +1,17 @@
 import classes from "./ForgotPasswordForm.module.css";
-import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { authUserForgotPassword } from "../../features/auth/authSlice";
+import { useInput } from "../../hooks/useInput";
 
 const ForgotPasswordForm = () => {
   const dispatch = useDispatch();
-  const { loading, error, data } = useSelector((s) => s.auth);
-  const emailInputRef = useRef();
+  const { loading, error, data } = useSelector((state) => state.auth);
+  const [emailInput, resetEmailInput] = useInput("");
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const enteredEmail = emailInputRef.current.value;
-    dispatch(authUserForgotPassword(enteredEmail));
+    dispatch(authUserForgotPassword(emailInput.value));
+    resetEmailInput();
   };
 
   return (
@@ -19,11 +19,7 @@ const ForgotPasswordForm = () => {
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label>我的信箱</label>
-          <input
-            type={"email"}
-            placeholder={"請輸入信箱"}
-            ref={emailInputRef}
-          />
+          <input {...emailInput} type={"email"} placeholder={"請輸入信箱"} />
         </div>
         <div className={classes.actions}>
           {loading && <p>loading...</p>}

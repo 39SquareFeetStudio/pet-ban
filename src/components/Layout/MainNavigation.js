@@ -19,9 +19,9 @@ const MainNavigation = () => {
           <div className="flex justify-between">
             <div className="flex space-x-4">
               <div>
-                <a href={() => {}} className={classes.appLogo}>
+                <button onClick={homeClickHandler} className={classes.appLogo}>
                   <Logo className="w-32 mr-2" alt="logo" />
-                </a>
+                </button>
               </div>
               <div className="hidden md:flex items-center space-x-1">
                 <button className={classes.btn} onClick={homeClickHandler} />
