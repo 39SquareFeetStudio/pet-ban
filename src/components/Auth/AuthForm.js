@@ -7,6 +7,7 @@ import {
   authActions,
 } from "../../features/auth/authSlice";
 import { useInput } from "../../hooks/useInput";
+import { validatePassword } from "../../helper/validate";
 
 const AuthForm = () => {
   const dispatch = useDispatch();
@@ -45,13 +46,15 @@ const AuthForm = () => {
     let check = false;
 
     if (!isLogin) {
-      check = passwordInput.value === confirmPasswordInput.value;
+      check =
+        !!passwordInput.value.match(validatePassword()) &&
+        passwordInput.value === confirmPasswordInput.value;
     } else {
-      check = true;
+      check = !!passwordInput.value.match(validatePassword());
     }
 
     if (check === false) {
-      setConfirmStr("密碼不一致");
+      setConfirmStr("密碼：至少八個字符，至少一個字母和一個數字 或 密碼不一致");
       return;
     }
 
