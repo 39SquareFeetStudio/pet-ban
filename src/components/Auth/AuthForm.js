@@ -87,6 +87,7 @@ const AuthForm = () => {
           </div>
         )}
         <div className={classes.actions}>
+          {confirmStr && <p>{confirmStr}</p>}
           {!loading && (
             <button className={classes.actions}>
               {isLogin ? "登入" : "註冊"}
@@ -95,7 +96,6 @@ const AuthForm = () => {
           {loading && <p>loading...</p>}
           {error && <p>{error}</p>}
           {data.messages && <p>{data.messages}</p>}
-          {confirmStr && <p>{confirmStr}</p>}
           <button
             className={classes.toggle}
             type={"button"}
