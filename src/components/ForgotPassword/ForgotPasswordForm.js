@@ -2,11 +2,17 @@ import classes from "./ForgotPasswordForm.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { authUserForgotPassword } from "../../features/auth/authSlice";
 import { useInput } from "../../hooks/useInput";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPasswordForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((state) => state.auth);
   const [emailInput, resetEmailInput] = useInput("");
+
+  const backHandler = () => {
+    navigate("/auth");
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -26,6 +32,13 @@ const ForgotPasswordForm = () => {
           {error && <p>{error}</p>}
           {data.messages && <p>{data.messages}</p>}
           <button className={classes.toggle}>{"送出"}</button>
+          <button
+            type={"button"}
+            className={classes.toggle}
+            onClick={backHandler}
+          >
+            {"返回"}
+          </button>
         </div>
       </form>
     </section>
