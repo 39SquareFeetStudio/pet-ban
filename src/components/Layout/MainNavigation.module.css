@@ -1,15 +1,17 @@
 .header {
-  @apply flex w-full h-0.5 shadow-2xl bg-yellow-600;
+  @apply flex min-w-full h-20 justify-around;
+  @apply bg-white shadow-2xl border-b-2 rounded-b-3xl;
 }
 
 .appLogo {
   @apply flex items-center py-2 px-2;
 }
 
-.gray {
-  @apply bg-gray-200;
+.nav {
+  @apply min-w-full h-0;
 }
 
 .btn {
-  @apply block py-2 px-4 text-sm hover:bg-gray-200 text-center;
+  @apply py-2 px-4 text-center;
+  @apply text-2xl text-yellow-600 hover:bg-gray-200 rounded-2xl;
 }

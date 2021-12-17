@@ -5,34 +5,36 @@ import { Link, useNavigate } from "react-router-dom";
 const MainNavigation = () => {
   const navigate = useNavigate();
 
-  const loginClickHandler = () => {
-    navigate("auth");
-  };
   const homeClickHandler = () => {
     navigate("/");
   };
 
+  const loginClickHandler = () => {
+    navigate("auth");
+  };
+
+  const aboutClickHandler = () => {
+    navigate("about");
+  };
+
   return (
     <header className={classes.header}>
-      <nav className={classes.gray}>
-        <div className="max-w-6xl mx-auto px-2">
-          <div className="flex justify-between">
+      <nav className={classes.nav}>
+        <div className="px-2">
+          <div className="flex w-full justify-between ">
             <div className="flex space-x-4">
               <div>
                 <button onClick={homeClickHandler} className={classes.appLogo}>
                   <Logo className="w-32 mr-2" alt="logo" />
                 </button>
               </div>
-              <div className="hidden md:flex items-center space-x-1">
-                <button className={classes.btn} onClick={homeClickHandler} />
-              </div>
             </div>
             <div className="hidden md:flex items-center space-x-1">
-              <button className={classes.btn} onClick={loginClickHandler}>
-                登入
+              <button className={classes.btn} onClick={aboutClickHandler}>
+                About us
               </button>
-              <button className={classes.btn} onClick={homeClickHandler}>
-                首頁
+              <button className={classes.btn} onClick={loginClickHandler}>
+                Log in
               </button>
             </div>
             <div className="md:hidden flex items-center">
