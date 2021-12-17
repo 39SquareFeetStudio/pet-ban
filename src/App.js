@@ -6,6 +6,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import ForgotPage from "./pages/ForgotPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path={"/auth"} element={<AuthPage />} />
         <Route path={"/forgot"} element={<ForgotPage />} />
+        <Route path={"/about"} element={<AboutPage />} />
       </Routes>
     </Layout>
   );
