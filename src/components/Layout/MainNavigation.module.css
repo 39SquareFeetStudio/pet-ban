@@ -1,6 +1,6 @@
 .header {
   @apply flex min-w-full h-20 justify-around;
-  @apply bg-white shadow-2xl border-b-2 rounded-b-3xl;
+  @apply bg-white;
 }
 
 .appLogo {
@@ -8,7 +8,7 @@
 }
 
 .nav {
-  @apply min-w-full h-0;
+  @apply w-9/12 h-0;
 }
 
 .btn {
