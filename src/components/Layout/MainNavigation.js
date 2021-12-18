@@ -1,8 +1,13 @@
 import classes from "./MainNavigation.module.css";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { collectionToggle } from "../../features/mainNav/mainNav-Slice";
+import { useDispatch, useSelector } from "react-redux";
 
 const MainNavigation = () => {
+  const collectionShow = useSelector((state) => state.mainNav.collectionShow);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const homeClickHandler = () => {
@@ -11,10 +16,29 @@ const MainNavigation = () => {
 
   const loginClickHandler = () => {
     navigate("auth");
+    dispatch(collectionToggle());
   };
 
   const aboutClickHandler = () => {
     navigate("about");
+    dispatch(collectionToggle());
+  };
+
+  const meowClickHandler = () => {
+    dispatch(collectionToggle());
+  };
+
+  const NavCollection = () => {
+    return (
+      <div id="NavCollection" className="md:hidden">
+        <button className={classes.btn} onClick={aboutClickHandler}>
+          About us
+        </button>
+        <button className={classes.btn} onClick={loginClickHandler}>
+          Log in
+        </button>
+      </div>
+    );
   };
 
   return (
@@ -38,15 +62,13 @@ const MainNavigation = () => {
               </button>
             </div>
             <div className="md:hidden flex items-center">
-              <button className={classes.btn}>你點看看</button>
+              <button className={classes.btn} onClick={meowClickHandler}>
+                喵喵喵
+              </button>
             </div>
           </div>
         </div>
-        <div className="md:hidden">
-          <Link className={classes.btn} to="/">
-            HomePage
-          </Link>
-        </div>
+        {collectionShow && <NavCollection />}
       </nav>
     </header>
   );

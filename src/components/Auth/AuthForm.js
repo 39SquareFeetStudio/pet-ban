@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import {
   authUserLoginOrSignUp,
   authActions,
-} from "../../features/auth/authSlice";
+} from "../../features/auth/auth-Slice";
 import { useInput } from "../../hooks/useInput";
 import { validatePassword } from "../../helper/validate";
 

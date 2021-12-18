@@ -1,6 +1,6 @@
 import classes from "./ForgotPasswordForm.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { authUserForgotPassword } from "../../features/auth/authSlice";
+import { authUserForgotPassword } from "../../features/auth/auth-Slice";
 import { useInput } from "../../hooks/useInput";
 import { useNavigate } from "react-router-dom";
 
