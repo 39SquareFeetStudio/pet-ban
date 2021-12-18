@@ -14,7 +14,7 @@ const StartPageContent = () => {
             </h1>
             <div className={classes.cosH2}>毛小孩醫療資訊整合平台</div>
           </div>
-          <Cat />
+          <Cat className={classes.logo} />
         </div>
       </div>
       <div className={classes.mainContent}>

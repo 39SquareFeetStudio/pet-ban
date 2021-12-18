@@ -8,15 +8,20 @@
 }
 
 .content {
-  @apply flex w-9/12 md:justify-between justify-center flex-wrap;
+  @apply flex flex-wrap w-9/12 justify-center;
 }
 
 .subject {
-  @apply md:ml-28 md:mt-28 md:text-justify leading-10;
+  @apply md:mt-28 md:text-justify leading-10;
   /* Pet 伴， 陪伴你的寵物一生 */
   /* 毛小孩的就診紀錄整合平台 */
   @apply font-mono;
   color: #464544;
+}
+
+.logo {
+  /* 放照片輪播的地方 */
+  @apply box-border md:w-3/6;
 }
 
 .cosH2 {
