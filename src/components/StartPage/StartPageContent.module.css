@@ -1,6 +1,5 @@
-.starting {
-  @apply flex justify-center;
-  @apply text-7xl;
+.body {
+  @apply justify-center;
 }
 
 .banner {
@@ -9,20 +8,52 @@
 }
 
 .content {
-  @apply flex w-9/12 md:justify-between flex-wrap;
+  @apply flex w-9/12 md:justify-between justify-center flex-wrap;
 }
 
-.h1 {
-  @apply md:ml-28 md:mt-28 md:text-justify;
+.subject {
+  @apply md:ml-28 md:mt-28 md:text-justify leading-10;
   /* Pet 伴， 陪伴你的寵物一生 */
-  @apply font-mono text-6xl;
-  line-height: 5rem;
+  /* 毛小孩的就診紀錄整合平台 */
+  @apply font-mono;
   color: #464544;
 }
 
-.h2 {
-  /* 毛小孩的就診紀錄整合平台 */
-  @apply font-mono md:text-2xl text-base;
-  line-height: 9rem;
+.cosH2 {
+  @apply right-1.5 mt-10;
+  @apply md:text-3xl text-base;
   color: #464544;
+}
+
+.mainContent {
+  @apply flex flex-col items-center;
+  @apply font-mono leading-10;
+}
+
+.span {
+  @apply md:w-36 p-1 m-5;
+  @apply text-3xl text-white;
+  background: #e4651d66;
+}
+
+.control {
+  @apply p-1 m-5;
+  @apply rounded-2xl text-white text-2xl;
+  background: #e4a01d;
+}
+
+.business-partners {
+}
+
+h1 {
+  @apply mt-16;
+  @apply md:text-6xl text-3xl;
+}
+
+h2 {
+  @apply md:text-3xl text-2xl;
+}
+
+p {
+  @apply text-2xl;
 }
