@@ -13,5 +13,6 @@
 
 .btn {
   @apply py-2 px-4 text-center;
-  @apply text-2xl text-yellow-600 hover:bg-gray-200 rounded-2xl;
+  @apply text-2xl hover:bg-gray-200 rounded-2xl;
+  color: #e4651d;
 }
