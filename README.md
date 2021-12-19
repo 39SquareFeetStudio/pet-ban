@@ -11,13 +11,16 @@ Create by Create React App
 診所預約系統.\
 提醒系統.
 
-## Available Scripts
-
+## tailwindcss
+使用tailwindcss語法快速建構layout及樣式
 Start the Tailwind CLI build process
 Run the CLI tool to scan your template files for classes and build your CSS.
 
+使用此指令產出CSS 加上--watch觀測產出完成時間
 npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch
-即時產生css
+
+
+## Available Scripts
 
 In the project directory, you can run:
 
