@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     divideColor: (theme) => ({
       ...theme("borderColors"),
@@ -13,4 +13,4 @@ module.exports = {
     divideColor: true,
   },
   plugins: [],
-}
+};

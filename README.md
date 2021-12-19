@@ -13,6 +13,12 @@ Create by Create React App
 
 ## Available Scripts
 
+Start the Tailwind CLI build process
+Run the CLI tool to scan your template files for classes and build your CSS.
+
+npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch
+即時產生css
+
 In the project directory, you can run:
 
 ### `yarn start`
