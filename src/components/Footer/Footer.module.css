@@ -1,0 +1,22 @@
+.footerBody {
+  @apply flex flex-col p-1.5;
+  @apply bg-gray-300;
+}
+
+.footerMain {
+  @apply flex justify-center mb-1.5;
+}
+
+.footerMain button {
+  @apply mr-5 ml-5;
+  @apply text-gray-500;
+}
+
+.footerMain button:hover {
+  color: #e4651d;
+}
+
+.content {
+  font-size: 1rem;
+  @apply text-gray-500;
+}

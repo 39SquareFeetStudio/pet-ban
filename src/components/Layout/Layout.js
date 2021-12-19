@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import MainNavigation from "./MainNavigation";
+import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
 
 const Layout = (props) => {
@@ -12,6 +13,7 @@ const Layout = (props) => {
       <MainNavigation />
       {/*避免遮蔽導覽列*/}
       <main className={navShow}>{props.children}</main>
+      <Footer />
     </Fragment>
   );
 };
