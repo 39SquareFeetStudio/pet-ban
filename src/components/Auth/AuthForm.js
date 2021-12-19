@@ -70,20 +70,52 @@ const AuthForm = () => {
 
   return (
     <section className={classes.auth}>
-      <h1>{isLogin ? "登入" : "註冊"}</h1>
+      {/*<h1>{isLogin ? "登入" : "註冊"}</h1>*/}
+      <div className={classes.title}>
+        <button
+          className={classes.toggleTitle}
+          type={"button"}
+          onClick={switchAuthModeHandler}
+        >
+          {isLogin ? (
+            <p className={""}>註冊</p>
+          ) : (
+            <p className={"border-b-4"}>註冊</p>
+          )}
+        </button>
+        <button
+          className={classes.toggleTitle}
+          type={"button"}
+          onClick={switchAuthModeHandler}
+        >
+          {isLogin ? (
+            <p className={"border-b-4"}>登入</p>
+          ) : (
+            <p className={""}>登入</p>
+          )}
+        </button>
+      </div>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label>我的帳號</label>
+          <label>帳號</label>
           <input {...accountInput} type={"email"} placeholder={"請輸入信箱"} />
         </div>
         <div className={classes.control}>
-          <label>我的密碼</label>
-          <input {...passwordInput} type={"password"} />
+          <label>密碼</label>
+          <input
+            {...passwordInput}
+            type={"password"}
+            placeholder={"請輸入密碼"}
+          />
         </div>
         {!isLogin && (
           <div className={classes.control}>
             <label>確認密碼</label>
-            <input {...confirmPasswordInput} type={"password"} />
+            <input
+              {...confirmPasswordInput}
+              type={"password"}
+              placeholder={"請輸入密碼"}
+            />
           </div>
         )}
         <div className={classes.actions}>
@@ -96,13 +128,6 @@ const AuthForm = () => {
           {loading && <p>loading...</p>}
           {error && <p>{error}</p>}
           {data.messages && <p>{data.messages}</p>}
-          <button
-            className={classes.toggle}
-            type={"button"}
-            onClick={switchAuthModeHandler}
-          >
-            {isLogin ? "我要註冊" : "我要登入"}
-          </button>
           <button
             className={classes.toggle}
             type={"button"}
