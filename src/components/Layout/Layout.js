@@ -10,12 +10,16 @@ const Layout = (props) => {
 
   const navShow = collectionShow ? "md:mt-0 mt-12" : "";
 
+  const FooterLogic = () => {
+    return <Fragment>{pathname === "/" && <Footer />}</Fragment>;
+  };
+
   return (
     <Fragment>
       <MainNavigation />
       {/*避免遮蔽導覽列*/}
       <main className={navShow}>{props.children}</main>
-      {pathname === "/" && <Footer />}
+      <FooterLogic />
     </Fragment>
   );
 };
