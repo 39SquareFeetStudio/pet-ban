@@ -2,7 +2,10 @@ import classes from "./MainNavigation.module.css";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { collectionToggle } from "../../features/mainNav/mainNav-Slice";
+import {
+  collectionHide,
+  collectionToggle,
+} from "../../features/mainNav/mainNav-Slice";
 import { useDispatch, useSelector } from "react-redux";
 
 const MainNavigation = () => {
@@ -12,16 +15,17 @@ const MainNavigation = () => {
 
   const homeClickHandler = () => {
     navigate("/");
+    dispatch(collectionHide());
   };
 
   const loginClickHandler = () => {
     navigate("auth");
-    dispatch(collectionToggle());
+    dispatch(collectionHide());
   };
 
   const aboutClickHandler = () => {
     navigate("about");
-    dispatch(collectionToggle());
+    dispatch(collectionHide());
   };
 
   const meowClickHandler = () => {
