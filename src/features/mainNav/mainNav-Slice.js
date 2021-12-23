@@ -11,9 +11,12 @@ export const mainNavSlice = createSlice({
     collectionToggle: (state, action) => {
       state.collectionShow = !state.collectionShow;
     },
+    collectionHide: (state, action) => {
+      state.collectionShow = false;
+    },
   },
 });
 
-export const { collectionToggle } = mainNavSlice.actions;
+export const { collectionToggle, collectionHide } = mainNavSlice.actions;
 
 export default mainNavSlice;
