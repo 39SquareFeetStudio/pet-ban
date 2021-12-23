@@ -68,7 +68,7 @@
 }
 
 .controlBody {
-  @apply flex justify-end;
+  @apply flex md:justify-end justify-center;
 }
 
 .control {
@@ -86,7 +86,7 @@ p {
 }
 
 .partnerBody {
-  @apply flex flex-col justify-start mb-10;
+  @apply flex justify-center mb-10;
   @apply bg-white font-mono;
 }
 
@@ -100,5 +100,5 @@ p {
 }
 
 .partnerContent {
-  @apply text-left ml-10;
+  @apply w-9/12 text-center ml-10;
 }
