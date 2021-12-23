@@ -33,12 +33,13 @@
 .mainContent {
   @apply flex flex-col items-center;
   @apply font-mono leading-10;
+  color: #464544;
 }
 
 .span {
-  @apply md:w-36 p-1 m-5;
+  @apply w-36 p-1 m-5;
   @apply text-3xl text-white;
-  background: #e4651d66;
+  background: #e2b59c;
 }
 
 .control {
@@ -47,12 +48,10 @@
   background: #e4a01d;
 }
 
-.business-partners {
-}
-
 h1 {
   @apply mt-16;
   @apply md:text-6xl text-3xl;
+  color: #464544;
 }
 
 h2 {

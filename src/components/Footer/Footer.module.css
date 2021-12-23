@@ -1,6 +1,7 @@
 .footerBody {
   @apply flex flex-col p-1.5;
-  @apply bg-gray-300;
+  background: #f1d8bc;
+  color: #464544;
 }
 
 .footerMain {
@@ -9,14 +10,12 @@
 
 .footerMain button {
   @apply mr-5 ml-5;
-  @apply text-gray-500;
 }
 
 .footerMain button:hover {
-  color: #e4651d;
+  color: #744538;
 }
 
 .content {
   font-size: 1rem;
-  @apply text-gray-500;
 }
