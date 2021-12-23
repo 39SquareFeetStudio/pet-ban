@@ -1,4 +1,4 @@
-.body {
+.startBody {
   @apply justify-center;
 }
 
@@ -19,6 +19,12 @@
   color: #464544;
 }
 
+.subject h1 {
+  @apply mt-16;
+  @apply md:text-6xl text-3xl;
+  color: #464544;
+}
+
 .logo {
   /* 放照片輪播的地方 */
   @apply box-border md:w-3/6;
@@ -30,28 +36,45 @@
   color: #464544;
 }
 
-.mainContent {
-  @apply flex flex-col items-center;
-  @apply font-mono leading-10;
+.mainBody {
+  @apply flex justify-center min-w-full mt-32 mb-32;
   color: #464544;
 }
 
+.mainContent {
+  @apply flex flex-col w-9/12;
+  @apply font-mono leading-10;
+}
+
+.mainItem {
+  @apply flex flex-col m-5;
+  @apply bg-white rounded-2xl border-t-4 border-t-amber-600;
+}
+
+.mainContent h1 {
+  @apply pl-5 md:text-left text-center;
+  @apply md:text-6xl text-3xl;
+  color: #464544;
+}
+
+.mainContent p {
+  @apply text-2xl text-left p-5;
+}
+
 .span {
-  @apply w-36 p-1 m-5;
+  @apply w-36 p-1 mb-5 mt-5;
   @apply text-3xl text-white;
   background: #e2b59c;
 }
 
-.control {
-  @apply p-1 m-5;
-  @apply rounded-2xl text-white text-2xl;
-  background: #e4a01d;
+.controlBody {
+  @apply flex justify-end;
 }
 
-h1 {
-  @apply mt-16;
-  @apply md:text-6xl text-3xl;
-  color: #464544;
+.control {
+  @apply md:w-1/12 w-6/12 p-1 m-5;
+  @apply rounded-2xl text-white text-2xl;
+  background: #e4a01d;
 }
 
 h2 {
@@ -60,4 +83,22 @@ h2 {
 
 p {
   @apply text-2xl;
+}
+
+.partnerBody {
+  @apply flex flex-col justify-start mb-10;
+  @apply bg-white font-mono;
+}
+
+.partnerBody h1 {
+  @apply text-3xl font-mono;
+  color: #464544;
+}
+.partnerBody ul {
+  @apply text-2xl font-mono;
+  color: #464544;
+}
+
+.partnerContent {
+  @apply text-left ml-10;
 }
