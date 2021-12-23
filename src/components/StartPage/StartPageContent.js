@@ -27,8 +27,8 @@ const StartPageContent = () => {
               <br />
               醫院預約及查詢掛號狀態
             </p>
-            <div className={classes.controlBody}>
-              <button className={classes.control}>成為會員</button>
+            <div className={classes.actions}>
+              <button>成為會員</button>
             </div>
           </div>
           <div className={classes.mainItem}>
@@ -42,8 +42,8 @@ const StartPageContent = () => {
               <br />
               可以於平台上媒合飼養者
             </p>
-            <div className={classes.controlBody}>
-              <button className={classes.control}>成為會員</button>
+            <div className={classes.actions}>
+              <button>成為會員</button>
             </div>
           </div>
         </div>
