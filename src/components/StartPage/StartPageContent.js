@@ -1,6 +1,18 @@
 import classes from "./StartPageContent.module.css";
 import { ReactComponent as Cat } from "../../assets/cat.svg";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { collectionHide } from "../../features/mainNav/mainNav-Slice";
+
 const StartPageContent = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const loginClickHandler = () => {
+    navigate("auth");
+    dispatch(collectionHide());
+  };
+
   return (
     <section className={classes.startBody}>
       <div className={classes.banner}>
@@ -28,7 +40,7 @@ const StartPageContent = () => {
               醫院預約及查詢掛號狀態
             </p>
             <div className={classes.actions}>
-              <button>成為會員</button>
+              <button onClick={loginClickHandler}>成為會員</button>
             </div>
           </div>
           <div className={classes.mainItem}>
@@ -43,7 +55,7 @@ const StartPageContent = () => {
               可以於平台上媒合飼養者
             </p>
             <div className={classes.actions}>
-              <button>成為會員</button>
+              <button onClick={loginClickHandler}>成為會員</button>
             </div>
           </div>
         </div>

@@ -74,13 +74,12 @@
 .actions button {
   @apply min-w-fit m-5;
   @apply font-mono text-2xl text-white cursor-pointer rounded-md;
-  background: #e4a01d;
   padding: 0.5rem 1.5rem;
+  color: #e4651d;
 }
 
 .actions button:hover {
-  color: #864e38;
-  background: #e4a01d;
+  @apply bg-gray-200;
 }
 
 h2 {
