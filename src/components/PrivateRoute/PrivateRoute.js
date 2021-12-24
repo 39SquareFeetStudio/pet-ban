@@ -17,7 +17,7 @@ export const PrivateRoute = ({ component, isAuthenticated, ...rest }) => {
 //{ children }: { children: JSX.Element }
 export const RequireAuth = ({ children }) => {
   let location = useLocation();
-
+  //此處帶入JWT校驗
   if (true) {
     // Redirect them to the /login page, but save the current location they were
     // trying to go to when they were redirected. This allows us to send them
