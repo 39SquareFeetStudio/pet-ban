@@ -9,6 +9,7 @@ import AuthPage from "./pages/AuthPage";
 import ForgotPage from "./pages/ForgotPage";
 import AboutPage from "./pages/AboutPage";
 import MemberPage from "./pages/MemberPage"; //待加入登入驗證
+import ProfilePage from "./pages/ProfilePage"; //待加入登入驗證
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           }
         />
         <Route path={"/member"} element={<MemberPage />} />
+        <Route path={"/profile"} element={<ProfilePage />} />
       </Routes>
     </Layout>
   );

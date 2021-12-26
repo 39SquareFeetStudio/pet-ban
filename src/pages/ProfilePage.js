@@ -1,9 +1,7 @@
+import PersonalProfileForm from "../components/PersonalProfile/PersonalProfileForm";
+
 const ProfilePage = () => {
-  return (
-    <section>
-      <h1>preparing</h1>
-    </section>
-  );
+  return <PersonalProfileForm />;
 };
 
 export default ProfilePage;
