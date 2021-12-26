@@ -5,7 +5,7 @@ const MemberCenterPageContent = () => {
   const navigate = useNavigate();
 
   function editPersonalProfileClickHandler() {
-    navigate("/changePassword");
+    navigate("/profile");
   }
 
   function editPasswordClickHandler() {
