@@ -22,6 +22,7 @@ const ForgotPasswordForm = () => {
 
   return (
     <section className={classes.auth}>
+      <h1>忘記密碼</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label>我的信箱</label>
@@ -31,7 +32,7 @@ const ForgotPasswordForm = () => {
           {loading && <p>loading...</p>}
           {error && <p>{error}</p>}
           {data.messages && <p>{data.messages}</p>}
-          <button className={classes.toggle}>{"送出"}</button>
+          <button className={classes.actions}>{"送出"}</button>
           <button
             type={"button"}
             className={classes.toggle}
