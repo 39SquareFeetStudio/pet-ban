@@ -3,11 +3,12 @@ import Layout from "./components/Layout/Layout";
 
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import { RequireAuth } from "./components/PrivateRoute/PrivateRoute"; //登入驗證機制
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import ForgotPage from "./pages/ForgotPage";
 import AboutPage from "./pages/AboutPage";
-import { RequireAuth } from "./components/PrivateRoute/PrivateRoute";
+import MemberPage from "./pages/MemberPage"; //待加入登入驗證
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path={"/member"} element={<MemberPage />} />
       </Routes>
     </Layout>
   );

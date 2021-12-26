@@ -1,0 +1,41 @@
+section {
+  @apply justify-center;
+}
+
+h1 {
+  @apply mt-16;
+  @apply md:text-6xl text-3xl;
+  color: #464544;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  @apply font-mono text-2xl text-white cursor-pointer rounded-2xl;
+  background-color: #e4a01d;
+  padding: 0.5rem 2.5rem;
+}
+
+.actions button:hover {
+  color: #864e38;
+  background-color: #e4a01d;
+}
+
+.actions .toggle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  background: transparent;
+  color: #e4651d;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+  background-color: transparent;
+  color: #e4651d;
+}
