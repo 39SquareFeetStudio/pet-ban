@@ -84,7 +84,9 @@ const StartPageContent = () => {
             <br />
             誠摯邀請您與我們合作
             <br />
-            0973298922 谷科工作室
+            cathy830409@gmal.com
+            <br />
+            谷科工作室
           </p>
         </div>
       </div>
