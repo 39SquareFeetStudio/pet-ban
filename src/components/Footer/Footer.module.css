@@ -1,7 +1,8 @@
 .footerBody {
-  @apply flex flex-col p-1.5;
-  background: #f1d8bc;
-  color: #464544;
+  @apply flex flex-col p-2.5;
+  /*background: #f1d8bc;*/
+  background: #e4651d;
+  color: #f4eee4;
 }
 
 .footerMain {
@@ -10,12 +11,20 @@
 
 .footerMain button {
   @apply mr-5 ml-5;
+  font-size: 1rem;
 }
 
 .footerMain button:hover {
-  color: #744538;
+  color: #ffffff;
+  font-size: 1.2rem;
 }
 
 .content {
+}
+.content p {
+  font-size: 0.5rem;
+}
+.content p:hover {
+  color: #ffffff;
   font-size: 1rem;
 }
