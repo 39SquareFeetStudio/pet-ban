@@ -31,7 +31,16 @@ const StartPageContent = () => {
       </div>
       <div className={classes.mainBody}>
         <div className={classes.mainContent}>
-          <h1>我們提供的服務</h1>
+          <h2>我們正在做的事</h2>
+          <ul>
+            <li>提升流浪動物領養率</li>
+            <li>提升寵物醫療便利性</li>
+          </ul>
+        </div>
+      </div>
+      <div className={classes.mainBody}>
+        <div className={classes.mainContent}>
+          <h2>我們提供的服務</h2>
           <div className={classes.mainItem}>
             <div className={classes.span}>飼主</div>
             <p>
@@ -62,10 +71,21 @@ const StartPageContent = () => {
       </div>
       <div className={classes.partnerBody}>
         <div className={classes.partnerContent}>
-          <h1>我們合作的動物醫院</h1>
-          <ul>
-            <li>台中市：</li>
-          </ul>
+          <h2>我們的合作夥伴</h2>
+          <a
+            href={"https://wilddonkeyworks.myportfolio.com/"}
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            野驢圖像
+          </a>
+          <p>
+            感謝您看到這裡
+            <br />
+            誠摯邀請您與我們合作
+            <br />
+            0973298922 谷科工作室
+          </p>
         </div>
       </div>
     </section>

@@ -46,19 +46,26 @@
   @apply font-mono leading-10;
 }
 
-.mainItem {
-  @apply flex flex-col m-5;
-  @apply bg-white rounded-2xl border-t-4 border-t-amber-600  shadow-md shadow-orange-400;
+.mainContent h2 {
+  @apply pl-5 m-5 md:text-left text-center;
+  @apply md:text-6xl text-2xl;
+  color: #464544;
+}
+.mainContent ul {
+  @apply ml-10;
 }
 
-.mainContent h1 {
+.mainContent li {
   @apply pl-5 m-5 md:text-left text-center;
-  @apply md:text-6xl text-3xl;
-  color: #464544;
+  @apply md:text-3xl text-base;
 }
 
 .mainContent p {
   @apply text-2xl text-left p-5;
+}
+.mainItem {
+  @apply flex flex-col m-5;
+  @apply bg-white rounded-2xl border-t-4 border-t-amber-600;
 }
 
 .span {
@@ -82,26 +89,25 @@
   @apply bg-gray-200;
 }
 
-h2 {
-  @apply md:text-3xl text-2xl;
-}
-
-p {
-  @apply text-2xl;
-}
-
 .partnerBody {
   @apply flex justify-center mb-10;
   @apply bg-white font-mono;
 }
 
-.partnerBody h1 {
-  @apply text-3xl font-mono;
+.partnerBody h2 {
+  @apply text-3xl m-5 font-mono;
   color: #464544;
 }
-.partnerBody ul {
-  @apply text-2xl font-mono;
+.partnerBody p {
+  @apply text-base m-5 font-mono;
   color: #464544;
+}
+
+.partnerBody a {
+  @apply text-2xl text-neutral-600;
+}
+.partnerBody a:hover {
+  color: #0087e0;
 }
 
 .partnerContent {
