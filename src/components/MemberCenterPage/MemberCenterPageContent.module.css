@@ -1,10 +1,16 @@
-section {
+.member {
   @apply justify-center;
 }
 
-h1 {
+.member h1 {
   @apply mt-16;
   @apply md:text-6xl text-3xl;
+  color: #464544;
+}
+
+.member p {
+  @apply m-5;
+  @apply md:text-3xl text-base;
   color: #464544;
 }
 

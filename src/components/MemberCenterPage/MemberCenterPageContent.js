@@ -13,7 +13,7 @@ const MemberCenterPageContent = () => {
   }
 
   return (
-    <section>
+    <section className={classes.member}>
       <h1>管理你的Pet伴 帳戶</h1>
       <p>Rick 歡迎使用</p>
       <div className={classes.actions}>
