@@ -1,21 +1,32 @@
 import classes from "./PersonalProfileForm.module.css";
 
 const PersonalProfileForm = () => {
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <section>
-      <div>
-        <h1>個人資訊</h1>
-        <label>姓名</label>
-        <input placeholder={"rick"} />
-        <label>生日</label>
-        <input placeholder={"1994-10-29"} />
-        <label>信箱</label>
-        <input placeholder={"edcrfvlily5@gmail.com"} />
-        <label>電話</label>
-        <input placeholder={"0927-XXX-XXX"} />
-        <button>修改</button>
+    <form onSubmit={onSubmitHandler} className={classes.personalProfileForm}>
+      <h1>個人資訊</h1>
+      <div className={classes.control}>
+        <label>姓名:</label>
+        <input placeholder={"姓名"} />
       </div>
-    </section>
+      <div className={classes.control}>
+        <label>生日:</label>
+        <input placeholder={"生日"} />
+      </div>
+      <div className={classes.control}>
+        <label>信箱:</label>
+        <input placeholder={"信箱"} />
+      </div>
+      <div className={classes.control}>
+        <label>電話:</label>
+        <input placeholder={"電話"} />
+      </div>
+      <button type={"submit"}>修改</button>
+      <button type={"button"}>返回</button>
+    </form>
   );
 };
 
