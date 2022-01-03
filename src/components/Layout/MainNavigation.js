@@ -33,6 +33,11 @@ const MainNavigation = () => {
     dispatch(collectionHide());
   };
 
+  const petClickHandler = () => {
+    navigate("pet");
+    dispatch(collectionHide());
+  };
+
   const meowClickHandler = () => {
     dispatch(collectionToggle());
   };
@@ -68,6 +73,9 @@ const MainNavigation = () => {
               </button>
               <button className={classes.btn} onClick={memberClickHandler}>
                 Member
+              </button>
+              <button className={classes.btn} onClick={petClickHandler}>
+                Pet
               </button>
               <button className={classes.btn} onClick={loginClickHandler}>
                 Log in
