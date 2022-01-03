@@ -1,5 +1,6 @@
 import classes from "./StartPageContent.module.css";
 import { ReactComponent as Cat } from "../../assets/cat.svg";
+import wildDonkeyImg from "../../assets/wilddonkeyworks2020.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { collectionHide } from "../../features/mainNav/mainNav-Slice";
@@ -77,7 +78,7 @@ const StartPageContent = () => {
             target={"_blank"}
             rel="noreferrer"
           >
-            野驢圖像
+            <img src={wildDonkeyImg} alt={"Wild Donkey Works"} />
           </a>
           <p>
             感謝您看到這裡

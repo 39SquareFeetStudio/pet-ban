@@ -103,13 +103,19 @@
   color: #464544;
 }
 
-.partnerBody a {
-  @apply text-2xl text-neutral-600;
-}
-.partnerBody a:hover {
-  color: #0087e0;
+.partnerContent {
+  @apply flex flex-col items-center;
+  @apply w-9/12 text-center;
 }
 
-.partnerContent {
-  @apply w-9/12 text-center ml-10;
+.partnerContent a{
+  @apply w-2/12 border-l-2 ;
+  border-color: transparent;
+}
+.partnerContent a:hover{
+  @apply border-l-2 border-amber-500;
+}
+
+.partnerContent img{
+  @apply mx-auto;
 }
