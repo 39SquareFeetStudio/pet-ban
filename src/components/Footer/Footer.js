@@ -5,7 +5,7 @@ const Footer = () => {
     <div className={classes.footerBody}>
       <div className={classes.footerMain}>
         <button>關於我們</button>
-        <button>提供意見</button>
+        <button>意見箱</button>
         <button>合作夥伴</button>
       </div>
       <div className={classes.content}>
