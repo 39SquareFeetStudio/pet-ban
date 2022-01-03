@@ -28,6 +28,11 @@ const MainNavigation = () => {
     dispatch(collectionHide());
   };
 
+  const memberClickHandler = () => {
+    navigate("member");
+    dispatch(collectionHide());
+  };
+
   const meowClickHandler = () => {
     dispatch(collectionToggle());
   };
@@ -61,13 +66,16 @@ const MainNavigation = () => {
               <button className={classes.btn} onClick={aboutClickHandler}>
                 About us
               </button>
+              <button className={classes.btn} onClick={memberClickHandler}>
+                Member
+              </button>
               <button className={classes.btn} onClick={loginClickHandler}>
                 Log in
               </button>
             </div>
             <div className="md:hidden flex items-center">
               <button className={classes.btn} onClick={meowClickHandler}>
-                喵喵喵
+                功能列
               </button>
             </div>
           </div>

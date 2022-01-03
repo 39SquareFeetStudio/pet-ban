@@ -39,3 +39,12 @@
   @apply outline-none border-2;
   border-color: #e4651d;
 }
+
+.actions button {
+  @apply py-2 px-4 text-center;
+  @apply text-2xl rounded-2xl;
+  color: #e4651d;
+}
+.actions button:hover {
+  @apply bg-gray-200;
+}

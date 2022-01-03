@@ -1,8 +1,13 @@
 import classes from "./PersonalProfileForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 const PersonalProfileForm = () => {
+  const navigate = useNavigate();
   const onSubmitHandler = (event) => {
     event.preventDefault();
+  };
+  const homeClickHandler = () => {
+    navigate("/member");
   };
 
   return (
@@ -24,8 +29,12 @@ const PersonalProfileForm = () => {
         <label>電話:</label>
         <input placeholder={"電話"} />
       </div>
-      <button type={"submit"}>修改</button>
-      <button type={"button"}>返回</button>
+      <div className={classes.actions}>
+        <button type={"submit"}>修改</button>
+        <button type={"button"} onClick={homeClickHandler}>
+          返回
+        </button>
+      </div>
     </form>
   );
 };
