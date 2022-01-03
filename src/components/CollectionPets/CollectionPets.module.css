@@ -1,0 +1,28 @@
+.collection{
+
+}
+
+.collection ul{
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 leading-6;
+    @apply p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8;
+    @apply text-sm bg-gray-50;
+}
+
+.control {
+ @apply flex text-black;
+}
+
+.control a{
+    @apply hover:bg-blue-500 hover:ring-blue-500 hover:shadow-md;
+    @apply rounded-md p-3 bg-white ring-1 ring-gray-200 shadow-sm;
+}
+
+.action li{
+    @apply flex;
+}
+
+.action a{
+    @apply w-full flex flex-col items-center justify-center;
+    @apply hover:border-blue-500 hover:border-solid hover:bg-white hover:text-blue-500 rounded-md border-2 border-dashed border-gray-300 py-3;
+    @apply text-sm leading-6 text-gray-900 font-medium;
+}
