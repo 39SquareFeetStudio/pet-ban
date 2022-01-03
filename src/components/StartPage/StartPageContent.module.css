@@ -95,7 +95,7 @@
 }
 
 .partnerBody h2 {
-  @apply text-3xl m-5 font-mono;
+  @apply text-4xl m-5 font-mono;
   color: #464544;
 }
 .partnerBody p {
@@ -109,7 +109,7 @@
 }
 
 .partnerContent a{
-  @apply w-2/12 border-l-2 ;
+  @apply w-36 border-l-2 ;
   border-color: transparent;
 }
 .partnerContent a:hover{
