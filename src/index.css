@@ -19,9 +19,9 @@ code {
     monospace;
 }
 
-@layer base {
-  ul,
-  ol {
-    list-style: revert;
-  }
-}
+/*@layer base {*/
+/*  ul,*/
+/*  ol {*/
+/*    list-style: revert;*/
+/*  }*/
+/*}*/

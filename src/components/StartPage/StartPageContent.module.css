@@ -52,12 +52,15 @@
   color: #464544;
 }
 .mainContent ul {
-  @apply ml-10;
+  @apply ml-10 mx-auto;
 }
 
 .mainContent li {
-  @apply pl-5 m-5 md:text-left text-center;
-  @apply md:text-3xl text-base;
+  @apply pl-5 m-5 text-left;
+  @apply md:text-3xl text-base border-l-8 border-amber-500;
+}
+.mainContent li:hover {
+  @apply border-amber-700;
 }
 
 .mainContent p {
