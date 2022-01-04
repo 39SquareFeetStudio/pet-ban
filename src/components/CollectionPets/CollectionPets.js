@@ -21,6 +21,24 @@ const CollectionPets = () => {
             </dl>
           </a>
         </li>
+        <li className={classes.control}>
+          <a href="/" className={"group"}>
+            <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+              <div>
+                <dt className="sr-only">Title</dt>
+                <dd className="group-hover:text-white text-gray-900">
+                  {"project.title"}
+                </dd>
+              </div>
+              <div>
+                <dt className="sr-only">Category</dt>
+                <dd className="group-hover:text-blue-200 text-gray-500">
+                  {"project.category"}
+                </dd>
+              </div>
+            </dl>
+          </a>
+        </li>
         <li className={classes.action}>
           <a href="/">
             <svg
