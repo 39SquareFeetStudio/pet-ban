@@ -19,6 +19,19 @@ Run the CLI tool to scan your template files for classes and build your CSS.
 使用此指令產出CSS 加上--watch觀測產出完成時間
 npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch
 
+## firebase hosting
+修正重整後找不到路徑問題
+fix reload
+firebase.json 中 hosting 內添加
+
+```
+"rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ]
+```
+參考來源
+https://stackoverflow.com/questions/51231060/firebase-hosting-page-not-found-error-on-empty-cache-and-hard-reload
 
 ## Available Scripts
 
