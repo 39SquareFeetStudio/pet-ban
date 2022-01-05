@@ -3,11 +3,11 @@ import Layout from "./components/Layout/Layout";
 
 import { Navigate, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { RequireAuth } from "./components/PrivateRoute/PrivateRoute"; //登入驗證機制
+// import { RequireAuth } from "./components/PrivateRoute/PrivateRoute"; //登入驗證機制
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import ForgotPage from "./pages/ForgotPage";
-import AboutPage from "./pages/AboutPage";
+// import AboutPage from "./pages/AboutPage";
 import MemberPage from "./pages/MemberPage"; //待加入登入驗證
 import ProfilePage from "./pages/ProfilePage"; //待加入登入驗證
 import PetPage from "./pages/PetPage";

@@ -1,5 +1,6 @@
 import classes from "./PersonalProfileForm.module.css";
 import { useNavigate } from "react-router-dom";
+import Calendar from "../Calendar/Calendar";
 
 const PersonalProfileForm = () => {
   const navigate = useNavigate();
@@ -19,7 +20,8 @@ const PersonalProfileForm = () => {
       </div>
       <div className={classes.control}>
         <label>生日:</label>
-        <input placeholder={"生日"} />
+        {/*<input placeholder={"生日"} />*/}
+        <Calendar />
       </div>
       <div className={classes.control}>
         <label>信箱:</label>
