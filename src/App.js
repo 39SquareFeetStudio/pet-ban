@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "./components/Layout/Layout";
 
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { RequireAuth } from "./components/PrivateRoute/PrivateRoute"; //登入驗證機制
 import HomePage from "./pages/HomePage";
@@ -21,15 +21,17 @@ function App() {
         <Route path={"/forgot"} element={<ForgotPage />} />
         <Route
           path={"/about"}
-          element={
-            <RequireAuth>
-              <AboutPage />
-            </RequireAuth>
-          }
+          element={<Navigate to={"/"} />}
+          // element={
+          //   <RequireAuth>
+          //     <AboutPage />
+          //   </RequireAuth>
+          // }
         />
         <Route path={"/member"} element={<MemberPage />} />
         <Route path={"/profile"} element={<ProfilePage />} />
         <Route path={"/pet"} element={<PetPage />} />
+        <Route path={"*"} element={<Navigate to={"/"} />} />
       </Routes>
     </Layout>
   );
