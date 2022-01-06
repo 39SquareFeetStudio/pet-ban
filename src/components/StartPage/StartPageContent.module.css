@@ -4,7 +4,7 @@
 
 .banner {
   @apply flex min-w-full justify-center;
-  @apply rounded-b-full bg-white;
+  @apply rounded-b-3xl bg-white;
 }
 
 .content {
