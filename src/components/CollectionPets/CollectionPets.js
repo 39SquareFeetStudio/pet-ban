@@ -11,6 +11,10 @@ const CollectionPets = () => {
           <a href="/" className={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
               <div>
+                <dt className="sr-only">名字</dt>
+                <dd className="group-hover:text-white text-2xl">{"小宇"}</dd>
+              </div>
+              <div>
                 <dt className="sr-only">照片</dt>
                 <dd className={""}>
                   <img
@@ -23,16 +27,12 @@ const CollectionPets = () => {
                 </dd>
               </div>
               <div>
-                <dt className="sr-only">名字</dt>
-                <dd className="group-hover:text-white text-2xl">{"小宇"}</dd>
+                <dt className="sr-only">歲</dt>
+                <dd className="group-hover:text-white text-base">{"5歲"}</dd>
               </div>
               <div>
                 <dt className="sr-only">性別</dt>
                 <dd className="group-hover:text-white text-base">{"公"}</dd>
-              </div>
-              <div>
-                <dt className="sr-only">歲</dt>
-                <dd className="group-hover:text-white text-base">{"5歲"}</dd>
               </div>
             </dl>
           </a>
@@ -40,6 +40,10 @@ const CollectionPets = () => {
         <li className={classes.control}>
           <a href="/" className={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+              <div>
+                <dt className="sr-only">名字</dt>
+                <dd className="group-hover:text-white text-2xl">{"秋哈"}</dd>
+              </div>
               <div>
                 <dt className="sr-only">照片</dt>
                 <dd className={""}>
@@ -53,16 +57,12 @@ const CollectionPets = () => {
                 </dd>
               </div>
               <div>
-                <dt className="sr-only">名字</dt>
-                <dd className="group-hover:text-white text-2xl">{"秋哈"}</dd>
+                <dt className="sr-only">歲</dt>
+                <dd className="group-hover:text-white text-base">{"5歲"}</dd>
               </div>
               <div>
                 <dt className="sr-only">性別</dt>
                 <dd className="group-hover:text-white text-base">{"公"}</dd>
-              </div>
-              <div>
-                <dt className="sr-only">歲</dt>
-                <dd className="group-hover:text-white text-base">{"5歲"}</dd>
               </div>
             </dl>
           </a>
@@ -70,6 +70,10 @@ const CollectionPets = () => {
         <li className={classes.control}>
           <a href="/" className={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+              <div>
+                <dt className="sr-only">名字</dt>
+                <dd className="group-hover:text-white text-2xl">{"娜娜"}</dd>
+              </div>
               <div>
                 <dt className="sr-only">照片</dt>
                 <dd className={""}>
@@ -83,16 +87,12 @@ const CollectionPets = () => {
                 </dd>
               </div>
               <div>
-                <dt className="sr-only">名字</dt>
-                <dd className="group-hover:text-white text-2xl">{"娜娜"}</dd>
+                <dt className="sr-only">歲</dt>
+                <dd className="group-hover:text-white text-base">{"3歲"}</dd>
               </div>
               <div>
                 <dt className="sr-only">性別</dt>
                 <dd className="group-hover:text-white text-base">{"母"}</dd>
-              </div>
-              <div>
-                <dt className="sr-only">歲</dt>
-                <dd className="group-hover:text-white text-base">{"3歲"}</dd>
               </div>
             </dl>
           </a>
