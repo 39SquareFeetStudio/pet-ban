@@ -45,8 +45,11 @@ const MainNavigation = () => {
   const NavCollection = () => {
     return (
       <div id="NavCollection" className="md:hidden">
-        <button className={classes.btn} onClick={aboutClickHandler}>
-          About us
+        <button className={classes.btn} onClick={petClickHandler}>
+          Pet
+        </button>
+        <button className={classes.btn} onClick={memberClickHandler}>
+          Member
         </button>
         <button className={classes.btn} onClick={loginClickHandler}>
           Log in
