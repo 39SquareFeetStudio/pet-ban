@@ -23,6 +23,7 @@
 
 .action li{
     @apply flex;
+    color: #464544;
 }
 
 .action a{

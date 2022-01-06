@@ -1,4 +1,8 @@
 import classes from "./CollectionPets.module.css";
+import demoPet1Img from "../../assets/demoPet1.jpeg";
+import demoPet2Img from "../../assets/demoPet2.jpeg";
+import demoPet3Img from "../../assets/demoPet3.jpeg";
+
 const CollectionPets = () => {
   return (
     <section className={classes.collection}>
@@ -7,16 +11,28 @@ const CollectionPets = () => {
           <a href="/" className={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
               <div>
-                <dt className="sr-only">Title</dt>
-                <dd className="group-hover:text-white text-gray-900">
-                  {"project.title"}
+                <dt className="sr-only">照片</dt>
+                <dd className={""}>
+                  <img
+                    src={demoPet1Img}
+                    className={
+                      "rounded-full md:w-1/6 w-7/12 mx-auto border-2 border-white"
+                    }
+                    alt={"Pet1"}
+                  />
                 </dd>
               </div>
               <div>
-                <dt className="sr-only">Category</dt>
-                <dd className="group-hover:text-blue-200 text-gray-500">
-                  {"project.category"}
-                </dd>
+                <dt className="sr-only">名字</dt>
+                <dd className="group-hover:text-white text-2xl">{"小宇"}</dd>
+              </div>
+              <div>
+                <dt className="sr-only">性別</dt>
+                <dd className="group-hover:text-white text-base">{"公"}</dd>
+              </div>
+              <div>
+                <dt className="sr-only">歲</dt>
+                <dd className="group-hover:text-white text-base">{"5歲"}</dd>
               </div>
             </dl>
           </a>
@@ -25,16 +41,58 @@ const CollectionPets = () => {
           <a href="/" className={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
               <div>
-                <dt className="sr-only">Title</dt>
-                <dd className="group-hover:text-white text-gray-900">
-                  {"project.title"}
+                <dt className="sr-only">照片</dt>
+                <dd className={""}>
+                  <img
+                    src={demoPet2Img}
+                    className={
+                      "rounded-full md:w-1/6 w-7/12 mx-auto border-2 border-white"
+                    }
+                    alt={"Pet2"}
+                  />
                 </dd>
               </div>
               <div>
-                <dt className="sr-only">Category</dt>
-                <dd className="group-hover:text-blue-200 text-gray-500">
-                  {"project.category"}
+                <dt className="sr-only">名字</dt>
+                <dd className="group-hover:text-white text-2xl">{"秋哈"}</dd>
+              </div>
+              <div>
+                <dt className="sr-only">性別</dt>
+                <dd className="group-hover:text-white text-base">{"公"}</dd>
+              </div>
+              <div>
+                <dt className="sr-only">歲</dt>
+                <dd className="group-hover:text-white text-base">{"5歲"}</dd>
+              </div>
+            </dl>
+          </a>
+        </li>
+        <li className={classes.control}>
+          <a href="/" className={"group"}>
+            <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+              <div>
+                <dt className="sr-only">照片</dt>
+                <dd className={""}>
+                  <img
+                    src={demoPet3Img}
+                    className={
+                      "rounded-full md:w-1/6 w-7/12 mx-auto border-2 border-white"
+                    }
+                    alt={"Pet2"}
+                  />
                 </dd>
+              </div>
+              <div>
+                <dt className="sr-only">名字</dt>
+                <dd className="group-hover:text-white text-2xl">{"娜娜"}</dd>
+              </div>
+              <div>
+                <dt className="sr-only">性別</dt>
+                <dd className="group-hover:text-white text-base">{"母"}</dd>
+              </div>
+              <div>
+                <dt className="sr-only">歲</dt>
+                <dd className="group-hover:text-white text-base">{"3歲"}</dd>
               </div>
             </dl>
           </a>
