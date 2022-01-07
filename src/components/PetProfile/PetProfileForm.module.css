@@ -1,0 +1,50 @@
+.petProfileForm {
+    margin: 3rem auto;
+    width: 95%;
+    max-width: 25rem;
+    border-radius: 6px;
+    background-color: #c4c4c44d;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: center;
+    color: #e4651d;
+    @apply font-mono;
+}
+
+.petProfileForm h1 {
+    @apply md:text-6xl text-3xl;
+}
+
+.control {
+    margin-bottom: 0.5rem;
+}
+
+.control label {
+    @apply text-left;
+    display: block;
+    color: #464544;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.control input {
+    @apply font-mono bg-white border-2 border-gray-300 rounded-sm;
+    color: #864e38;
+    width: 100%;
+    text-align: left;
+    padding: 0.25rem;
+}
+
+.control input:focus {
+    @apply outline-none border-2;
+    border-color: #e4651d;
+}
+
+.actions button {
+    @apply py-2 px-4 text-center;
+    @apply text-2xl rounded-2xl;
+    color: #e4651d;
+}
+.actions button:hover {
+    @apply bg-gray-200;
+}
