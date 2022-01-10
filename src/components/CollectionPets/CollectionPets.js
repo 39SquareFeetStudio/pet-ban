@@ -98,7 +98,7 @@ const CollectionPets = () => {
           </a>
         </li>
         <li className={classes.action}>
-          <a href="/">
+          <a href={"pet/profile"}>
             <svg
               className="group-hover:text-blue-500 mb-1 text-gray-400"
               width="20"

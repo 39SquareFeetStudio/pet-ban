@@ -11,16 +11,17 @@ import ForgotPage from "./pages/ForgotPage";
 import MemberPage from "./pages/MemberPage"; //待加入登入驗證
 import ProfilePage from "./pages/ProfilePage"; //待加入登入驗證
 import PetPage from "./pages/PetPage";
+import PetProfilePage from "./pages/PetProfilePage";
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path={"/auth"} element={<AuthPage />} />
-        <Route path={"/forgot"} element={<ForgotPage />} />
+        <Route path={"auth"} element={<AuthPage />} />
+        <Route path={"forgot"} element={<ForgotPage />} />
         <Route
-          path={"/about"}
+          path={"about"}
           element={<Navigate to={"/"} />}
           // element={
           //   <RequireAuth>
@@ -28,9 +29,10 @@ function App() {
           //   </RequireAuth>
           // }
         />
-        <Route path={"/member"} element={<MemberPage />} />
-        <Route path={"/profile"} element={<ProfilePage />} />
-        <Route path={"/pet"} element={<PetPage />} />
+        <Route path={"member"} element={<MemberPage />} />
+        <Route path={"profile"} element={<ProfilePage />} />
+        <Route path={"pet"} element={<PetPage />} />
+        <Route path={"pet/profile"} element={<PetProfilePage />} />
         <Route path={"*"} element={<Navigate to={"/"} />} />
       </Routes>
     </Layout>
