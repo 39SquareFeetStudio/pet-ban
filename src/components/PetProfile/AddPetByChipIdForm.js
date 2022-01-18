@@ -1,3 +1,4 @@
+import classes from "./AddPetByChipIdForm.module.css";
 import { useNavigate } from "react-router-dom";
 
 const AddPetByChipIdForm = () => {
@@ -12,16 +13,16 @@ const AddPetByChipIdForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <h1>新增</h1>
-      <div className={"control"}>
-        <label>使用晶片號碼帶入寵物資訊</label>
+    <form onSubmit={onSubmitHandler} className={classes.addPetByChipIdForm}>
+      <h1>寵物晶片</h1>
+      <div className={classes.control}>
+        <label>寵物晶片號碼</label>
         <input placeholder={"請輸入寵物註冊的晶片號碼"} />
       </div>
-      <div className={"action"}>
-        <button type={"submit"}>確定送出</button>
+      <div className={classes.actions}>
+        <button type={"submit"}>建立</button>
       </div>
-      <div className={"action"}>
+      <div className={classes.toggle}>
         <button type={"button"} onClick={petProfileFormHandler}>
           未註冊寵物晶片
         </button>
