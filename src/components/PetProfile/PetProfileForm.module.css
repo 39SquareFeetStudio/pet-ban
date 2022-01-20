@@ -16,6 +16,7 @@
 }
 
 .control {
+    display: block;
     margin-bottom: 0.5rem;
 }
 
@@ -27,7 +28,7 @@
     margin-bottom: 0.5rem;
 }
 
-.control input {
+.control input{
     @apply font-mono bg-white border-2 border-gray-300 rounded-sm;
     color: #864e38;
     width: 100%;
@@ -35,16 +36,50 @@
     padding: 0.25rem;
 }
 
+.selectBlock{
+    @apply flex items-center;
+    color: #464544;
+}
+
 .control input:focus {
     @apply outline-none border-2;
     border-color: #e4651d;
 }
 
-.actions button {
-    @apply py-2 px-4 text-center;
-    @apply text-2xl rounded-2xl;
-    color: #e4651d;
+.actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.actions a {
+    @apply w-full flex flex-col items-center justify-center;
+    @apply rounded-md border-2 border-dashed border-gray-300 py-3;
+    @apply text-sm leading-6 text-gray-900 font-medium;
+}
+
+.actions button {
+    @apply font-mono text-2xl text-white cursor-pointer rounded-2xl;
+    background-color: #e4a01d;
+    padding: 0.5rem 2.5rem;
+}
+
 .actions button:hover {
-    @apply bg-gray-200;
+    color: #864e38;
+    background-color: #e4a01d;
+}
+
+.toggle {
+    font-size: 1rem;
+    margin-top: 1rem;
+    background: transparent;
+    color: #e4651d;
+    border: none;
+    padding: 0.15rem 1.5rem;
+}
+
+.toggle:hover {
+    background-color: transparent;
+    color: #864e38;
 }

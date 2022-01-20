@@ -14,7 +14,7 @@ const AddPetByChipIdForm = () => {
 
   return (
     <form onSubmit={onSubmitHandler} className={classes.addPetByChipIdForm}>
-      <h1>寵物晶片</h1>
+      <h1>寵愛卡</h1>
       <div className={classes.control}>
         <label>寵物晶片號碼</label>
         <input placeholder={"請輸入寵物註冊的晶片號碼"} />
