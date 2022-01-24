@@ -1,8 +1,16 @@
 .member {
-  @apply justify-center;
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 50rem;
+  border-radius: 6px;
+  background-color: #c4c4c44d;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+  color: #e4651d;
 }
 
-.member h1 {
+.member h2 {
   @apply mt-16;
   @apply md:text-6xl text-3xl;
   color: #464544;
