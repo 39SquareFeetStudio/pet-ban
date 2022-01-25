@@ -13,7 +13,7 @@
 .member h2 {
   @apply mt-16;
   @apply md:text-6xl text-3xl;
-  color: #464544;
+  color: #212121;
 }
 
 .member p {
@@ -30,26 +30,15 @@
 }
 
 .actions button {
-  @apply font-mono text-2xl text-white cursor-pointer rounded-2xl;
-  background-color: #e4a01d;
-  padding: 0.5rem 2.5rem;
-}
-
-.actions button:hover {
-  color: #864e38;
-  background-color: #e4a01d;
-}
-
-.actions .toggle {
   font-size: 1.5rem;
   margin-top: 1rem;
-  background: transparent;
-  color: #e4651d;
+  color: #E6E6E6;
+  background-color: #3D3D3D;
   border: none;
+  border-radius: 1rem;
   padding: 0.15rem 1.5rem;
 }
 
-.actions .toggle:hover {
-  background-color: transparent;
-  color: #e4651d;
+.actions button:hover {
+  background-color: #1C1C1C;
 }

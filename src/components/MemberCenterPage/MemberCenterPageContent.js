@@ -17,18 +17,10 @@ const MemberCenterPageContent = () => {
       <h2>管理你的Pet伴 帳戶</h2>
       <p>Rick 歡迎使用</p>
       <div className={classes.actions}>
-        <button
-          className={classes.toggle}
-          type={"button"}
-          onClick={editPersonalProfileClickHandler}
-        >
-          {"修改個人資料"}
+        <button type={"button"} onClick={editPersonalProfileClickHandler}>
+          {"個人資料"}
         </button>
-        <button
-          className={classes.toggle}
-          type={"button"}
-          onClick={editPasswordClickHandler}
-        >
+        <button type={"button"} onClick={editPasswordClickHandler}>
           {"修改密碼"}
         </button>
       </div>
