@@ -16,11 +16,11 @@ const CollectionPets = () => {
               </div>
               <div>
                 <dt className="sr-only">照片</dt>
-                <dd className={""}>
+                <dd className="flex items-center">
                   <img
                     src={demoPet1Img}
                     className={
-                      "rounded-full md:w-1/6 w-7/12 mx-auto border-2 border-white"
+                      "rounded-full w-5/6 md:max-w-[12rem] mx-auto border-2 border-white"
                     }
                     alt={"Pet1"}
                   />
@@ -50,7 +50,7 @@ const CollectionPets = () => {
                   <img
                     src={demoPet2Img}
                     className={
-                      "rounded-full md:w-1/6 w-7/12 mx-auto border-2 border-white"
+                      "rounded-full w-5/6 md:max-w-[12rem] mx-auto border-2 border-white"
                     }
                     alt={"Pet2"}
                   />
@@ -80,7 +80,7 @@ const CollectionPets = () => {
                   <img
                     src={demoPet3Img}
                     className={
-                      "rounded-full md:w-1/6 w-7/12 mx-auto border-2 border-white"
+                      "rounded-full w-5/6 md:max-w-[12rem] mx-auto border-2 border-white"
                     }
                     alt={"Pet2"}
                   />

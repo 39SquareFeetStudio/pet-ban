@@ -5,7 +5,7 @@
 .collection ul{
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 leading-6;
     @apply p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8;
-    @apply text-sm bg-gray-50;
+    @apply text-sm;
 }
 
 .control {
@@ -13,11 +13,12 @@
 }
 
 .control a{
-    @apply rounded-md p-3 ring-1 ring-gray-200 shadow-sm w-full;
-    background: #C2C1C1;
+    @apply rounded-md p-3 w-full;
+    background-color: #c4c4c44d;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .control a:hover{
-    @apply ring-blue-500 shadow-md;
     background: #C2C1C1;
 }
 
