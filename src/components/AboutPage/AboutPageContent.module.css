@@ -1,3 +1,9 @@
-.btn {
-  @apply block py-2 px-4 text-sm hover:bg-gray-200 text-center;
+
+.contentBody{
+  @apply md:mt-24 mt-12;
 }
+
+.title{
+  @apply flex justify-center;
+}
+
