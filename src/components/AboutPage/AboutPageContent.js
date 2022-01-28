@@ -1,12 +1,55 @@
 import classes from "./AboutPageContent.module.css";
-import { ReactComponent as AboutTitle } from "../../assets/aboutTitle.svg";
 import { ReactComponent as ImgNoFound } from "../../assets/imgNoFound.svg";
 
 const AboutPageContent = () => {
   return (
     <section className={classes.contentBody}>
       <div className={classes.title}>
-        <AboutTitle />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={"auto"}
+          height={"auto"}
+          viewBox="0 0 861 162"
+          className="font-sans max-w-[861px]"
+        >
+          <g id="aboutTitle" transform="translate(1)">
+            <text
+              id="PetBan陪伴_支持動物_零棄養"
+              transform="translate(644 61)"
+              fill="#e07c44"
+              font-size="48"
+              font-weight="500"
+            >
+              <tspan x="-644.176" y="0">
+                PetBan
+              </tspan>
+              <tspan y="0">陪伴</tspan>
+              <tspan y="0"></tspan>
+              <tspan y="0">支持動物</tspan>
+              <tspan y="0" font-size="20"></tspan>
+              <tspan y="0" font-size="58">
+                {" "}
+                零棄養
+              </tspan>
+            </text>
+            <text
+              id="提倡寵物登記_提高認養率"
+              transform="translate(269 142)"
+              fill="#e07c44"
+              font-size="48"
+              font-weight="500"
+            >
+              <tspan x="0" y="0">
+                提倡寵物登記
+              </tspan>
+              <tspan y="0"></tspan>
+              <tspan y="0" font-size="58">
+                {" "}
+                提高認養率
+              </tspan>
+            </text>
+          </g>
+        </svg>
         <div className={classes.summary}>
           <div className={classes.summaryImg}>
             <ImgNoFound />
