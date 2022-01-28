@@ -10,7 +10,7 @@ const AboutPageContent = () => {
           width={"auto"}
           height={"auto"}
           viewBox="0 0 861 162"
-          className="font-sans max-w-[861px]"
+          className="font-sans max-w-[861px] pr-5 pl-5"
         >
           <g id="aboutTitle" transform="translate(1)">
             <text
