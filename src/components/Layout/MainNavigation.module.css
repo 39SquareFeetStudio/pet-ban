@@ -13,6 +13,40 @@
 
 .btn {
   @apply py-2 px-4 text-center;
-  @apply text-2xl hover:bg-gray-200 rounded-2xl;
+  @apply font-sans text-3xl hover:bg-gray-200 rounded-2xl;
   color: #e4651d;
+}
+
+.navCollection {
+  @apply flex flex-col justify-items-start items-end;
+  @apply md:hidden;
+  position: fixed;
+  top: 30vh;
+  left: 20%;
+  width: 80%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.colBtn{
+  @apply mb-2 py-2 px-4 text-center;
+  @apply w-fit font-sans text-3xl bg-gray-100 rounded-l-3xl;
+  color: #e4651d;
+}
+
+@media (min-width: 768px) {
+  .navCollection {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(213, 213, 213, 0.75);
 }

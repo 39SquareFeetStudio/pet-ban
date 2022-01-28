@@ -8,7 +8,7 @@ const Layout = (props) => {
   const { pathname } = useLocation();
   const collectionShow = useSelector((state) => state.mainNav.collectionShow);
 
-  const navShow = collectionShow ? "md:mt-0 mt-12" : "";
+  // const navShow = collectionShow ? "md:mt-0 mt-12" : "";
 
   const FooterLogic = () => {
     return <Fragment>{pathname === "/" && <Footer />}</Fragment>;
@@ -18,7 +18,7 @@ const Layout = (props) => {
     <Fragment>
       <MainNavigation />
       {/*避免遮蔽導覽列*/}
-      <main className={navShow}>{props.children}</main>
+      <main className={""}>{props.children}</main>
       <FooterLogic />
     </Fragment>
   );

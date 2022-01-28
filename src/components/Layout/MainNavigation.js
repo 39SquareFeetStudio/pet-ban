@@ -44,16 +44,22 @@ const MainNavigation = () => {
 
   const NavCollection = () => {
     return (
-      <div id="NavCollection" className="md:hidden">
-        <button className={classes.btn} onClick={petClickHandler}>
-          Pet
-        </button>
-        <button className={classes.btn} onClick={memberClickHandler}>
-          Member
-        </button>
-        <button className={classes.btn} onClick={loginClickHandler}>
-          Log in
-        </button>
+      <div>
+        <div className={classes.backdrop} onClick={meowClickHandler} />
+        <div id="NavCollection" className={classes.navCollection}>
+          <button className={classes.colBtn} onClick={aboutClickHandler}>
+            About us
+          </button>
+          <button className={classes.colBtn} onClick={memberClickHandler}>
+            Member
+          </button>
+          <button className={classes.colBtn} onClick={petClickHandler}>
+            Pet
+          </button>
+          <button className={classes.colBtn} onClick={loginClickHandler}>
+            Log in
+          </button>
+        </div>
       </div>
     );
   };
