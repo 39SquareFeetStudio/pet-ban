@@ -15,7 +15,7 @@ const AboutPageContent = () => {
           <g id="aboutTitle" transform="translate(1)">
             <text
               id="PetBan陪伴_支持動物_零棄養"
-              transform="translate(644 61)"
+              transform="translate(666 61)"
               fill="#e07c44"
               font-size="48"
               font-weight="500"
@@ -34,7 +34,7 @@ const AboutPageContent = () => {
             </text>
             <text
               id="提倡寵物登記_提高認養率"
-              transform="translate(269 142)"
+              transform="translate(250 142)"
               fill="#e07c44"
               font-size="48"
               font-weight="500"
