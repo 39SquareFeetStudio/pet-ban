@@ -30,8 +30,9 @@
 
 .colBtn{
   @apply mb-2 py-2 px-4 text-center;
-  @apply w-fit font-sans text-3xl bg-gray-100 rounded-l-3xl;
-  color: #e4651d;
+  @apply w-fit font-medium text-3xl rounded-l-2xl;
+  color: #ffffff;
+  background-color: #e4651d;
 }
 
 @media (min-width: 768px) {
