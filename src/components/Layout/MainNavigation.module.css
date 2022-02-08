@@ -1,5 +1,5 @@
 .header {
-  @apply flex min-w-full h-20 justify-around;
+  @apply flex md:mx-12 mx-1 h-20 justify-around;
   @apply bg-white;
 }
 

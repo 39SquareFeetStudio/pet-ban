@@ -1,5 +1,7 @@
 .footerBody {
-  @apply flex flex-col p-2.5;
+  @apply flex flex-col rounded-t-3xl;
+  @apply md:mx-24 mx-1 md:p-12 p-3;
+  @apply font-sans;
   /*background: #f1d8bc;*/
   background: #e4651d;
   color: #f4eee4;
@@ -11,23 +13,21 @@
 
 .footerMain button {
   @apply mr-5 ml-5;
-  font-size: 1rem;
+  font-size: 1.2rem;
   @apply border-l-2;
   border-color: transparent;
 }
 
 .footerMain button:hover {
   color: #ffffff;
-  font-size: 1.2rem;
   @apply border-l-2 border-white;
 }
 
 .content {
 }
 .content p {
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 .content p:hover {
   color: #ffffff;
-  font-size: 1rem;
 }
