@@ -8,7 +8,7 @@
 }
 
 .nav {
-  @apply w-9/12 h-0;
+  @apply md:w-9/12 w-full h-0;
 }
 
 .btn {

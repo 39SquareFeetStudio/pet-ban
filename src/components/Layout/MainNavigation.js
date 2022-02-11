@@ -3,6 +3,14 @@ import { ReactComponent as Logo } from "../../assets/logo.svg";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
+  Layout,
+  Fit,
+  Alignment,
+  useRive,
+  useStateMachineInput,
+} from "rive-react";
+import hamburger from "../../assets/hamburger.riv";
+import {
   collectionHide,
   collectionToggle,
 } from "../../features/mainNav/mainNav-Slice";
@@ -12,6 +20,25 @@ const MainNavigation = () => {
   const collectionShow = useSelector((state) => state.mainNav.collectionShow);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const STATE_MACHINE_NAME = "State Machine";
+  const INPUT_NAME = "Switch";
+
+  const { rive, RiveComponent } = useRive({
+    src: hamburger,
+    stateMachines: STATE_MACHINE_NAME,
+    layout: new Layout({
+      fit: Fit.Contain,
+      alignment: Alignment.TopCenter,
+    }),
+    autoplay: true,
+  });
+
+  const onClickInput = useStateMachineInput(
+    rive,
+    STATE_MACHINE_NAME,
+    INPUT_NAME
+  );
 
   const homeClickHandler = () => {
     navigate("/");
@@ -40,6 +67,7 @@ const MainNavigation = () => {
 
   const meowClickHandler = () => {
     dispatch(collectionToggle());
+    onClickInput.fire();
   };
 
   const NavCollection = () => {
@@ -67,33 +95,31 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <nav className={classes.nav}>
-        <div className="px-2">
-          <div className="flex w-full justify-between ">
-            <div className="flex space-x-4">
-              <div>
-                <button onClick={homeClickHandler} className={classes.appLogo}>
-                  <Logo className="w-32 mr-2" alt="logo" />
-                </button>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center space-x-1">
-              <button className={classes.btn} onClick={aboutClickHandler}>
-                About us
-              </button>
-              <button className={classes.btn} onClick={memberClickHandler}>
-                Member
-              </button>
-              <button className={classes.btn} onClick={petClickHandler}>
-                Pet
-              </button>
-              <button className={classes.btn} onClick={loginClickHandler}>
-                Log in
+        <div className="flex w-full justify-between px-2">
+          <div className="flex space-x-4">
+            <div>
+              <button onClick={homeClickHandler} className={classes.appLogo}>
+                <Logo className="w-32 mr-2" alt="logo" />
               </button>
             </div>
-            <div className="md:hidden flex items-center">
-              <button className={classes.btn} onClick={meowClickHandler}>
-                功能列
-              </button>
+          </div>
+          <div className="hidden md:flex items-center space-x-1">
+            <button className={classes.btn} onClick={aboutClickHandler}>
+              About us
+            </button>
+            <button className={classes.btn} onClick={memberClickHandler}>
+              Member
+            </button>
+            <button className={classes.btn} onClick={petClickHandler}>
+              Pet
+            </button>
+            <button className={classes.btn} onClick={loginClickHandler}>
+              Log in
+            </button>
+          </div>
+          <div className={"md:hidden flex w-full justify-end items-center"}>
+            <div className="w-16 h-16">
+              <RiveComponent onClick={meowClickHandler} />
             </div>
           </div>
         </div>
