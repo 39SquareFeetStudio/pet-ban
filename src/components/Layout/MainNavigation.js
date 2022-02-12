@@ -1,7 +1,5 @@
 import classes from "./MainNavigation.module.css";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Layout,
   Fit,
@@ -10,6 +8,10 @@ import {
   useStateMachineInput,
 } from "rive-react";
 import hamburger from "../../assets/hamburger.riv";
+
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   collectionHide,
   collectionToggle,
@@ -21,10 +23,10 @@ const MainNavigation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //animation
   const STATE_MACHINE_NAME = "State Machine";
   const INPUT_NAME = "Switch";
-
-  const { rive, RiveComponent } = useRive({
+  const { rive: hamburgerRive, RiveComponent: HamburgerComponent } = useRive({
     src: hamburger,
     stateMachines: STATE_MACHINE_NAME,
     layout: new Layout({
@@ -34,8 +36,8 @@ const MainNavigation = () => {
     autoplay: true,
   });
 
-  const onClickInput = useStateMachineInput(
-    rive,
+  const petBanOnClickInput = useStateMachineInput(
+    hamburgerRive,
     STATE_MACHINE_NAME,
     INPUT_NAME
   );
@@ -48,26 +50,30 @@ const MainNavigation = () => {
   const loginClickHandler = () => {
     navigate("auth");
     dispatch(collectionHide());
+    petBanOnClickInput.fire();
   };
 
   const aboutClickHandler = () => {
     navigate("about");
     dispatch(collectionHide());
+    petBanOnClickInput.fire();
   };
 
   const memberClickHandler = () => {
     navigate("member");
     dispatch(collectionHide());
+    petBanOnClickInput.fire();
   };
 
   const petClickHandler = () => {
     navigate("pet");
     dispatch(collectionHide());
+    petBanOnClickInput.fire();
   };
 
   const meowClickHandler = () => {
     dispatch(collectionToggle());
-    onClickInput.fire();
+    petBanOnClickInput.fire();
   };
 
   const NavCollection = () => {
@@ -118,9 +124,10 @@ const MainNavigation = () => {
             </button>
           </div>
           <div className={"md:hidden flex w-full justify-end items-center"}>
-            <div className="w-16 h-16">
-              <RiveComponent onClick={meowClickHandler} />
-            </div>
+            <HamburgerComponent
+              className={"w-16 h-16"}
+              onClick={meowClickHandler}
+            />
           </div>
         </div>
         {collectionShow && <NavCollection />}
