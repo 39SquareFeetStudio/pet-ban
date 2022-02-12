@@ -45,6 +45,9 @@ const MainNavigation = () => {
   const homeClickHandler = () => {
     navigate("/");
     dispatch(collectionHide());
+    if (collectionShow) {
+      petBanOnClickInput.fire();
+    }
   };
 
   const loginClickHandler = () => {
