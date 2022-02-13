@@ -9,7 +9,7 @@ const Footer = () => {
         <button>合作夥伴</button>
       </div>
       <div className={classes.content}>
-        <p>Copyright &copy; 2021 GooCat谷科工作室</p>
+        <p>Copyright &copy; 2021 PetBan創意工作室</p>
       </div>
     </div>
   );
