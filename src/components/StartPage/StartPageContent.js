@@ -87,7 +87,7 @@ const StartPageContent = () => {
             <br />
             cathy830409@gmal.com
             <br />
-            谷科工作室
+            PetBan創意工作室
           </p>
         </div>
       </div>
