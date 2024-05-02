@@ -1,5 +1,6 @@
 .startBody {
-  @apply justify-center;
+  @apply mt-16;
+  @apply justify-center static;
 }
 
 .banner {

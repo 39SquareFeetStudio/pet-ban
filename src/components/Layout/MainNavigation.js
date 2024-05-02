@@ -91,7 +91,7 @@ const MainNavigation = () => {
             Member
           </button>
           <button className={classes.colBtn} onClick={petClickHandler}>
-            Pet
+            Pets
           </button>
           <button className={classes.colBtn} onClick={loginClickHandler}>
             Log in
@@ -120,7 +120,7 @@ const MainNavigation = () => {
               Member
             </button>
             <button className={classes.btn} onClick={petClickHandler}>
-              Pet
+              Pets
             </button>
             <button className={classes.btn} onClick={loginClickHandler}>
               Log in

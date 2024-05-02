@@ -41,7 +41,7 @@ const StartPageContent = () => {
       </div>
       <div className={classes.mainBody}>
         <div className={classes.mainContent}>
-          <h2>我們提供的服務</h2>
+          <h2>我們的路線圖</h2>
           <div className={classes.mainItem}>
             <div className={classes.span}>飼主</div>
             <p>
@@ -50,7 +50,7 @@ const StartPageContent = () => {
               醫院預約及查詢掛號狀態
             </p>
             <div className={classes.actions}>
-              <button onClick={loginClickHandler}>成為會員</button>
+              <button onClick={loginClickHandler}>支持</button>
             </div>
           </div>
           <div className={classes.mainItem}>
@@ -65,7 +65,7 @@ const StartPageContent = () => {
               可以於平台上媒合飼養者
             </p>
             <div className={classes.actions}>
-              <button onClick={loginClickHandler}>成為會員</button>
+              <button onClick={loginClickHandler}>支持</button>
             </div>
           </div>
         </div>
@@ -83,11 +83,11 @@ const StartPageContent = () => {
           <p>
             感謝您看到這裡
             <br />
-            誠摯邀請您與我們合作
+            誠摯邀請您與我們共同創造
             <br />
             cathy830409@gmal.com
             <br />
-            PetBan創意工作室
+            山石久平工作室
           </p>
         </div>
       </div>

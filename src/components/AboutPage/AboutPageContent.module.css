@@ -1,6 +1,6 @@
 
 .contentBody{
-  @apply md:mt-24 mt-12 font-sans;
+  @apply md:mt-24 mt-28 font-sans;
   color: #464544;
 }
 

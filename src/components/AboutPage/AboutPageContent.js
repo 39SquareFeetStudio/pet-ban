@@ -60,7 +60,7 @@ const AboutPageContent = () => {
         </div>
       </div>
       <div className={classes.title}>
-        <h2>PetBan創意工作室：</h2>
+        <h2>山石久平工作室：</h2>
         <p>
           致力於開發有引響力的網站，提供的服務有
           <br />
