@@ -1,15 +1,15 @@
 # 寵物健康資訊平台
 
-Create by Create React App
+Create by "Create React App"
 
 ## 寵物健康管理
 
-會員管理系統.\
-寵物基本資料系統.\
-看診紀錄系統.\
-疫苗接種紀錄系統.\
-診所預約系統.\
-提醒系統.
+- 會員管理系統.\
+- 寵物基本資料系統.\
+- 看診紀錄系統.\
+- 疫苗接種紀錄系統.\
+- 診所預約系統.\
+- 提醒系統.
 
 ## tailwindcss
 使用tailwindcss語法快速建構layout及樣式
