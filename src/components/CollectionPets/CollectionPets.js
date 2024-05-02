@@ -8,7 +8,8 @@ const CollectionPets = () => {
     <section className={classes.collection}>
       <ul>
         <li className={classes.control}>
-          <a href="/" className={"group"}>
+          <a href={"https://www.instagram.com/sanmo_daily/" } target={"_blank"}
+            rel="noreferrer" refclassName={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
               <div>
                 <dt className="sr-only">名字</dt>
@@ -38,7 +39,8 @@ const CollectionPets = () => {
           </a>
         </li>
         <li className={classes.control}>
-          <a href="/" className={"group"}>
+          <a href={"https://www.instagram.com/sanmo_daily/" } target={"_blank"}
+            rel="noreferrer" className={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
               <div>
                 <dt className="sr-only">名字</dt>
@@ -68,7 +70,8 @@ const CollectionPets = () => {
           </a>
         </li>
         <li className={classes.control}>
-          <a href="/" className={"group"}>
+          <a href={"https://www.instagram.com/sanmo_daily/" } target={"_blank"}
+            rel="noreferrer" className={"group"}>
             <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
               <div>
                 <dt className="sr-only">名字</dt>

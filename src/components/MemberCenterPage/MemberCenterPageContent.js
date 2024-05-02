@@ -15,7 +15,7 @@ const MemberCenterPageContent = () => {
   return (
     <section className={classes.member}>
       <h2>管理你的Pet伴 帳戶</h2>
-      <p>Rick 歡迎使用</p>
+      <p>您好 XXX 歡迎使用</p>
       <div className={classes.actions}>
         <button type={"button"} onClick={editPersonalProfileClickHandler}>
           {"個人資料"}
