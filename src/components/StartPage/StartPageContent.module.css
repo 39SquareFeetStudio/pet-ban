@@ -43,7 +43,7 @@
 }
 
 .mainContent {
-  @apply flex flex-col w-9/12;
+  @apply flex flex-col;
   @apply font-mono leading-10;
 }
 

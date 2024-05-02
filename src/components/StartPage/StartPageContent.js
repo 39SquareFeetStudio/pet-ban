@@ -41,7 +41,7 @@ const StartPageContent = () => {
       </div>
       <div className={classes.mainBody}>
         <div className={classes.mainContent}>
-          <h2>我們的路線圖</h2>
+          <h2>我們的開發路線圖</h2>
           <div className={classes.mainItem}>
             <div className={classes.span}>飼主</div>
             <p>
