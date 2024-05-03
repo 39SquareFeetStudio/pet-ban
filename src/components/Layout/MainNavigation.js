@@ -43,7 +43,7 @@ const MainNavigation = () => {
   );
 
   const homeClickHandler = () => {
-    navigate("/");
+    navigate("/pet-ban");
     dispatch(collectionHide());
     if (collectionShow) {
       petBanOnClickInput.fire();
