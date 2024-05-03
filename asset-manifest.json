@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pet-ban/static/css/main.eadb5071.css",
-    "main.js": "/pet-ban/static/js/main.08473ac7.js",
+    "main.css": "/pet-ban/static/css/main.4a7b3f92.css",
+    "main.js": "/pet-ban/static/js/main.9e538f46.js",
     "static/js/787.0ad76bd1.chunk.js": "/pet-ban/static/js/787.0ad76bd1.chunk.js",
     "static/media/demoPet1.jpeg": "/pet-ban/static/media/demoPet1.1fb8688f7d24e0ddd92f.jpeg",
     "static/media/demoPet3.jpeg": "/pet-ban/static/media/demoPet3.25e820875033c22ebc0f.jpeg",
@@ -9,15 +9,16 @@
     "static/media/demoPet2.jpeg": "/pet-ban/static/media/demoPet2.7f3b1fa59197666d7339.jpeg",
     "static/media/cat.svg": "/pet-ban/static/media/cat.6c8e7199355e11efc6157fdc51abb257.svg",
     "static/media/logo.svg": "/pet-ban/static/media/logo.09f1c801c5890174d6a4e520fd0f2d1c.svg",
+    "static/media/metamask-logo.svg": "/pet-ban/static/media/metamask-logo.e8118bc01fce9dcad369a4e600875e56.svg",
     "static/media/hamburger.riv": "/pet-ban/static/media/hamburger.0a929ffef054825fada7.riv",
     "index.html": "/pet-ban/index.html",
     "static/media/imgNoFound.svg": "/pet-ban/static/media/imgNoFound.4cc1f1d9ffcadffb37d0638a6d40c5df.svg",
-    "main.eadb5071.css.map": "/pet-ban/static/css/main.eadb5071.css.map",
-    "main.08473ac7.js.map": "/pet-ban/static/js/main.08473ac7.js.map",
+    "main.4a7b3f92.css.map": "/pet-ban/static/css/main.4a7b3f92.css.map",
+    "main.9e538f46.js.map": "/pet-ban/static/js/main.9e538f46.js.map",
     "787.0ad76bd1.chunk.js.map": "/pet-ban/static/js/787.0ad76bd1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eadb5071.css",
-    "static/js/main.08473ac7.js"
+    "static/css/main.4a7b3f92.css",
+    "static/js/main.9e538f46.js"
   ]
 }
