@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pet-ban/static/css/main.6ddc7d63.css",
-    "main.js": "/pet-ban/static/js/main.a75cde9e.js",
+    "main.css": "/pet-ban/static/css/main.eadb5071.css",
+    "main.js": "/pet-ban/static/js/main.08473ac7.js",
     "static/js/787.0ad76bd1.chunk.js": "/pet-ban/static/js/787.0ad76bd1.chunk.js",
     "static/media/demoPet1.jpeg": "/pet-ban/static/media/demoPet1.1fb8688f7d24e0ddd92f.jpeg",
     "static/media/demoPet3.jpeg": "/pet-ban/static/media/demoPet3.25e820875033c22ebc0f.jpeg",
@@ -12,12 +12,12 @@
     "static/media/hamburger.riv": "/pet-ban/static/media/hamburger.0a929ffef054825fada7.riv",
     "index.html": "/pet-ban/index.html",
     "static/media/imgNoFound.svg": "/pet-ban/static/media/imgNoFound.4cc1f1d9ffcadffb37d0638a6d40c5df.svg",
-    "main.6ddc7d63.css.map": "/pet-ban/static/css/main.6ddc7d63.css.map",
-    "main.a75cde9e.js.map": "/pet-ban/static/js/main.a75cde9e.js.map",
+    "main.eadb5071.css.map": "/pet-ban/static/css/main.eadb5071.css.map",
+    "main.08473ac7.js.map": "/pet-ban/static/js/main.08473ac7.js.map",
     "787.0ad76bd1.chunk.js.map": "/pet-ban/static/js/787.0ad76bd1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ddc7d63.css",
-    "static/js/main.a75cde9e.js"
+    "static/css/main.eadb5071.css",
+    "static/js/main.08473ac7.js"
   ]
 }
