@@ -1,4 +1,5 @@
 import classes from "./ConnectWalletButton.module.css";
+import { ReactComponent as MetamaskLogo } from "../../assets/metamask-logo.svg";
 
 const ConnectWalletButton = ({
     onPressLogout,
@@ -20,6 +21,9 @@ const ConnectWalletButton = ({
               <p className={""}>登入</p>
             )}
           </button>
+        </div>
+        <div className={"px-3 py-0"}>
+          <MetamaskLogo/>
         </div>
         {address && !loading ? (
           <div className={classes.actions}>
