@@ -56,6 +56,12 @@ const MainNavigation = () => {
     petBanOnClickInput.fire();
   };
 
+  const loginWebThreeClickHandler = () => {
+    navigate("loginWebThree");
+    dispatch(collectionHide());
+    petBanOnClickInput.fire();
+  };
+
   const aboutClickHandler = () => {
     navigate("about");
     dispatch(collectionHide());
@@ -94,7 +100,10 @@ const MainNavigation = () => {
             Pets
           </button>
           <button className={classes.colBtn} onClick={loginClickHandler}>
-            Log in
+            Login
+          </button>
+          <button className={classes.colBtn} onClick={loginWebThreeClickHandler}>
+            Login web3
           </button>
         </div>
       </div>
@@ -123,7 +132,10 @@ const MainNavigation = () => {
               Pets
             </button>
             <button className={classes.btn} onClick={loginClickHandler}>
-              Log in
+              Login
+            </button>
+            <button className={classes.btn} onClick={loginWebThreeClickHandler}>
+              Web3
             </button>
           </div>
           <div className={"md:hidden flex w-full justify-end items-center"}>

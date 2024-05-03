@@ -15,6 +15,7 @@ import ProfilePage from "./pages/ProfilePage"; //待加入登入驗證
 import PetPage from "./pages/PetPage";
 import AddPetByChipIdForm from "./components/PetProfile/AddPetByChipIdForm";
 import PetProfilePage from "./pages/PetProfilePage";
+import LoginWebThreePage from "./pages/LoginWebThreePage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path={"member"} element={<MemberPage />} />
         <Route path={"profile"} element={<ProfilePage />} />
         <Route path={"pet"} element={<PetPage />} />
+        <Route path={"loginWebThree"} element={<LoginWebThreePage />} />
         <Route
           path={"pet/addPetByChipIdForm"}
           element={<AddPetByChipIdForm />}

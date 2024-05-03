@@ -1,3 +1,4 @@
+
 import classes from "./AuthForm.module.css";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -121,9 +122,9 @@ const AuthForm = () => {
         <div className={classes.actions}>
           {confirmStr && <p>{confirmStr}</p>}
           {!loading && (
-            <button className={classes.actions}>
-              {isLogin ? "登入" : "註冊"}
-            </button>
+              <button className={classes.actions}>
+                {isLogin ? "登入" : "註冊"}
+              </button>
           )}
           {loading && <p>loading...</p>}
           {error && <p>{error}</p>}
