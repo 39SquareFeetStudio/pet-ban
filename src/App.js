@@ -20,7 +20,7 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/pet-ban" element={<HomePage />} />
         <Route path={"auth"} element={<AuthPage />} />
         <Route path={"forgot"} element={<ForgotPage />} />
         <Route path={"about"} element={<AboutPage />} />
@@ -32,7 +32,7 @@ function App() {
           element={<AddPetByChipIdForm />}
         />
         <Route path={"pet/profile"} element={<PetProfilePage />} />
-        <Route path={"*"} element={<Navigate to={"/"} />} />
+        <Route path={"*"} element={<Navigate to={"/pet-ban"} />} />
       </Routes>
     </Layout>
   );
